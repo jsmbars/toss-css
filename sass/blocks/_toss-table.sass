@@ -1,0 +1,173 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Common table
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".toss-table"
+
+#{$block}
+  display: block
+  width: 100%
+  border: 1px solid map-get($app-palette, border-primary)
+
+  // $Common table MOD: type common
+  &_type_common
+    display: table
+
+  // $Common table MOD: role bookings table
+  &_role_bookings
+
+  // $Common table MOD: role selected customers
+  &_role_selected-customers
+
+
+  // $Common table group
+  &__group
+    position: relative
+    width: 100%
+    background-color: map-get($app-palette, bg-light)
+
+    &:nth-child(odd)
+      background-color: map-get($app-palette, bg-secondary)
+
+
+  // $Common table row
+  &__row
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+    background-color: map-get($app-palette, bg-light)
+
+    #{$block}_type_common &
+      display: table-row
+
+    &:nth-child(odd)
+      background-color: map-get($app-palette, bg-secondary)
+
+    &:not(:last-child)
+      border-bottom: 1px solid map-get($app-palette, border-primary)
+
+    // $Common table row MOD: role header
+    &_role_header
+
+    // $Common table row MOD: adjust group
+    &_adjust_group
+      background-color: transparent
+
+      &:nth-child(odd)
+        background-color: transparent
+
+    // $Common table row MOD: adjust action
+    &_adjust_action
+      cursor: pointer
+      transition: background-color, .3s
+
+      &:hover
+        background-color: lighten(map-get($app-palette, accent-blue), 20)
+
+
+    // $Common table row MOD:  no border
+    &_no-border,
+    &_no-border:not(:last-child)
+      border: none
+
+    // $Common table row MOD: state success
+    &_state_success,
+    &_state_success:nth-child(odd),
+    &_state_success:nth-child(even),
+      background-color: lighten(map-get($app-palette, accent-green), 40)
+
+    // $Common table row MOD: state alert
+    &_state_alert,
+    &_state_alert:nth-child(odd),
+    &_state_alert:nth-child(even)
+      background-color: lighten(map-get($app-palette, accent-red), 20)
+
+
+  // $Common table cell
+  &__cell
+    flex-grow: 1
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    min-height: 50px
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: map-get($app-palette, text-primary)
+    padding: 10px 15px
+
+    #{$block}_type_common &
+      display: table-cell
+      height: 50px
+      text-align: left
+      vertical-align: middle
+      border-bottom: 1px solid map-get($app-palette, border-primary)
+
+    #{$block}_type_common #{$block}__row:last-child &
+      border-bottom: none
+
+    &:not(:last-child)
+      border-right: 1px solid map-get($app-palette, border-primary)
+
+    // $Common table cell first column
+    &:nth-child(1)
+
+    // $Common table cell MOD: role header
+    // $Common table cell MOD: role footer
+    &_role_header,
+    &_role_footer
+      font-weight: 600
+
+    &_no-border
+      &:not(:last-child)
+        border: none
+
+
+  // $Common table info
+  &__info
+    width: 100%
+
+
+  // $Common table text
+  &__text
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 300
+    color: map-get($app-palette, text-primary)
+
+    & > b
+      font-weight: 600
+
+    // $Common table text MOD: adjust no wrap
+    &_adjust_no-wrap
+      white-space: nowrap
+
+    // $Common table text MOD: adjust wrap
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
+
+
+  // $Common table actions
+  &__actions
+    text-align: center
+
+
+  // $Common table action
+  &__action

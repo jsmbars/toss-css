@@ -9,3 +9,23 @@
 
 =testout($width: 1px, $line-type: solid, $color: blue)
   outline: $width $line-type $color
+
+=testcount($element: "*", $depth: 1)
+  counter-reset: test-counter
+
+  %counter-number
+    counter-increment: test-counter
+    content: counter(test-counter)
+    display: block
+    font-size: 12px !important
+    line-height: 1 !important
+    font-weight: normal !important
+    color: red !important
+
+  @if $depth == 1
+    & > #{$element}:before
+      @extend %counter-number
+
+  @else
+    & #{$element}:before
+      @extend %counter-number
