@@ -45,6 +45,9 @@ $block: ".toss-modal"
     background-color: map-get($app-palette, bg-secondary)
     text-align: center
 
+    &:only-child
+      background-color: map-get($app-palette, bg-light)
+
 
   // $Modal window content
   &__content
@@ -59,12 +62,6 @@ $block: ".toss-modal"
     &:not(:last-child)
       margin-bottom: 30px
 
-    &_role_actions-middle
-      display: flex
-      flex-direction: row
-      justify-content: center
-      align-items: center
-
 
   // $Modal window actions
   &__actions
@@ -73,7 +70,6 @@ $block: ".toss-modal"
     align-items: center
     justify-content: center
     width: 100%
-    padding: 30px 20px
 
 
   // $Modal window action
@@ -93,7 +89,6 @@ $block: ".toss-modal"
 
   // $Modal window title
   &__title
-    margin-bottom: 20px
     font-family: $f-sans
     font-size: 30px
     line-height: 1
@@ -101,8 +96,8 @@ $block: ".toss-modal"
     color: map-get($app-palette, text-primary)
     text-align: center
 
-    &:last-child
-      margin-bottom: 0
+    &:not(:last-child)
+      margin-bottom: 20px
 
 
   // $Modal window subtitle
@@ -112,6 +107,16 @@ $block: ".toss-modal"
     line-height: 1.5
     color: map-get($app-palette, text-secondary)
     font-weight: 400
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+  // $Modal window subtitle line
+  &__subtitle-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
 
 
   // $Modal window text
