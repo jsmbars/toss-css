@@ -17,7 +17,7 @@ $block: ".toss-table"
 #{$block}
   display: block
   width: 100%
-  border: 1px solid map-get($app-palette, border-primary)
+  border: 1px solid $c-border-primary
 
   // $Common table MOD: type common
   &_type_common
@@ -34,10 +34,10 @@ $block: ".toss-table"
   &__group
     position: relative
     width: 100%
-    background-color: map-get($app-palette, bg-light)
+    background-color: $c-bg-light
 
     &:nth-child(odd)
-      background-color: map-get($app-palette, bg-secondary)
+      background-color: $c-bg-secondary
 
 
   // $Common table row
@@ -48,16 +48,16 @@ $block: ".toss-table"
     justify-content: flex-start
     align-items: stretch
     width: 100%
-    background-color: map-get($app-palette, bg-light)
+    background-color: $c-bg-light
 
     #{$block}_type_common &
       display: table-row
 
     &:nth-child(odd)
-      background-color: map-get($app-palette, bg-secondary)
+      background-color: $c-bg-secondary
 
     &:not(:last-child)
-      border-bottom: 1px solid map-get($app-palette, border-primary)
+      border-bottom: 1px solid $c-border-primary
 
     // $Common table row MOD: role header
     &_role_header
@@ -75,7 +75,7 @@ $block: ".toss-table"
       transition: background-color, .3s
 
       &:hover
-        background-color: lighten(map-get($app-palette, accent-blue), 20)
+        background-color: lighten($c-accent-blue, 20)
 
 
     // $Common table row MOD:  no border
@@ -87,13 +87,13 @@ $block: ".toss-table"
     &_state_success,
     &_state_success:nth-child(odd),
     &_state_success:nth-child(even),
-      background-color: lighten(map-get($app-palette, accent-green), 40)
+      background-color: lighten($c-accent-green, 40)
 
     // $Common table row MOD: state alert
     &_state_alert,
     &_state_alert:nth-child(odd),
     &_state_alert:nth-child(even)
-      background-color: lighten(map-get($app-palette, accent-red), 20)
+      background-color: lighten($c-accent-red, 20)
 
 
   // $Common table cell
@@ -107,7 +107,7 @@ $block: ".toss-table"
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     padding: 10px 15px
 
     #{$block}_type_common &
@@ -115,13 +115,13 @@ $block: ".toss-table"
       height: 50px
       text-align: left
       vertical-align: middle
-      border-bottom: 1px solid map-get($app-palette, border-primary)
+      border-bottom: 1px solid $c-border-primary
 
     #{$block}_type_common #{$block}__row:last-child &
       border-bottom: none
 
     &:not(:last-child)
-      border-right: 1px solid map-get($app-palette, border-primary)
+      border-right: 1px solid $c-border-primary
 
     // $Common table cell first column
     &:nth-child(1)
@@ -147,7 +147,7 @@ $block: ".toss-table"
     font-family: $f-sans
     font-size: 14px
     font-weight: 300
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
     & > b
       font-weight: 600

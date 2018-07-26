@@ -19,6 +19,7 @@ $block: ".toss-form"
   width: 100%
 
   // $Common form group
+  // $Common form group
   &__group
     position: relative
     display: block
@@ -35,13 +36,16 @@ $block: ".toss-form"
     &_size_fourth,
     &_size_max,
     &_size_min,
-    &_size_fluid,
+    &_size_max-fluid,
+    &_size_min-fluid
       margin-right: 30px
       margin-bottom: 0
 
       @media screen and (max-width: 960px)
-        margin-right: 0
-        margin-bottom: 30px
+
+        &:not(#{$block}__field_adjust_nowrap)
+          margin-right: 0
+          margin-bottom: 30px
 
     &_size_half
       flex-grow: 0
@@ -75,27 +79,26 @@ $block: ".toss-form"
       flex-shrink: 1
       width: auto
 
+    &_size_min
+      flex-grow: 0
+      flex-shrink: 1
+      width: auto
+
+    &_size_max-fluid
+      flex-grow: 1
+      flex-shrink: 1
+      width: auto
+
       @media screen and (max-width: 960px)
-        flex-grow: 1
         width: 100%
 
-    &_size_min
+    &_size_min-fluid
       flex-grow: 0
       flex-shrink: 1
       width: auto
 
       @media screen and (max-width: 960px)
         flex-grow: 1
-        width: 100%
-
-    &_size_fluid
-      flex-grow: 0
-      flex-shrink: 0
-      width: auto
-
-      @media screen and (max-width: 960px)
-        flex-grow: 1
-        flex-shrink: 1
         width: 100%
 
     // $Common form group MOD: position last
@@ -120,19 +123,25 @@ $block: ".toss-form"
     display: block
     width: 100%
     background-color: #FFF
-    box-shadow: 0px 2px 8px 0 map-get($app-palette, shadow-secondary)
+    border: 1px solid $c-border-primary
+    box-shadow: 0px 2px 8px 0 $c-shadow-secondary
 
 
   // $Common form board header
   &__board-header
-    padding: 15px 25px
-    background-color: map-get($app-palette, bg-secondary)
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 15px 20px
+    border-bottom: 1px solid $c-border-primary
+    background-color: $c-bg-secondary
 
     @media screen and (max-width: 960px)
-      padding: 15px 10px
+      padding: 15px
 
     &_type_light
-      background-color: map-get($app-palette, bg-light)
+      background-color: $c-bg-light
 
 
   // $Common form board title
@@ -141,15 +150,37 @@ $block: ".toss-form"
     line-height: 1
     font-family: $f-sans
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
+
+
+  // $Common form board switch
+  &__board-switch
+    position: relative
+    display: block
+    width: 30px
+    height: 30px
+    cursor: pointer
+
+    &:before
+      content: '\e91a'
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      font-family: icons
+      font-size: 30px
+      line-height: 1
+      color: $c-text-primary
+      transform: translate(-50%,-50%)
+      transition: all, .3s
 
 
   // $Common form board content
   &__board-content
-    padding: 15px 25px 25px
+    padding: 15px 20px
 
     @media screen and (max-width: 960px)
-      padding: 15px 10px 25px
+      padding: 15px
 
     // $Common form board content MOD: state visible
     &_state_visible
@@ -165,7 +196,7 @@ $block: ".toss-form"
     display: flex
     flex-direction: row
     justify-content: flex-start
-    align-items: center
+    align-items: flex-start
     width: 100%
     margin-bottom: 30px
 
@@ -299,7 +330,7 @@ $block: ".toss-form"
     font-size: 14px
     line-height: 1
     font-weight: 600
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
     @media screen and (max-width: 960px)
       text-align: center

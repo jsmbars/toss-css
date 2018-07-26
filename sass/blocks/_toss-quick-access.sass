@@ -17,7 +17,7 @@ $block: ".toss-quick-access"
 #{$block}
   display: block
   width: 100%
-  background-color: map-get($app-palette, bg-light)
+  background-color: $c-bg-light
 
 
   // $Quick access group
@@ -45,7 +45,7 @@ $block: ".toss-quick-access"
     font-size: 14px
     line-height: 1
     font-weight: 600
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
     &:before,
     &:after
@@ -55,7 +55,7 @@ $block: ".toss-quick-access"
       display: block
       width: 1000px
       height: 0
-      border-top: 2px solid map-get($app-palette, border-secondary)
+      border-top: 2px solid $c-border-secondary
 
     &:before
       right: 100%
