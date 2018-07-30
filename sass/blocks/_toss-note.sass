@@ -1,0 +1,95 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Note
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".toss-note"
+#{$block}
+  display: block
+  position: relative
+  padding: 15px
+  background-color: $c-gray-medium
+
+  // $Note MOD: color accent blue
+  &_color_accent-blue
+    background-color: $c-accent-blue
+
+  // $Note MOD: color accent red
+  &_color_accent-red
+    background-color: $c-accent-red
+
+  // $Note MOD: color accent yellow
+  &_color_accent-yellow
+    background-color: $c-accent-yellow
+
+  // $Note MOD: color accent green
+  &_color_accent-green
+    background-color: $c-accent-green
+
+  // $Note MOD: color accent purple
+  &_color_accent-purple
+    background-color: $c-accent-purple
+
+  // $Note MOD: color accent pink
+  &_color_accent-pink
+    background-color: $c-accent-pink
+
+  // $Note MOD: icon alert
+  &_icon_alert
+    padding-left: 40px
+
+    &:before
+      position: absolute
+      top: 18px
+      left: 15px
+      display: block
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      color: $c-text-light
+
+  &_icon_alert
+    &:before
+      content: "\e911"
+
+  // $Note MOD: position above
+  &_position_above
+    margin-bottom: 30px
+
+  // $Note MOD: position below
+  &_position_below
+    margin-top: 30px
+
+
+  // $Note text
+  &__text
+    position: relative
+    display: block
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: $c-text-light
+
+
+  // $Note text line
+  &__line
+    display: block
+
+
+  // $Note text link
+  &__text-link
+    color: inherit
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
