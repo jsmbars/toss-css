@@ -58,6 +58,8 @@ $block: ".toss-modal"
     display: block
     width: 40px
     height: 40px
+    margin: 0
+    padding: 0
     border: none
     border-radius: 50%
     background-color: $c-gray-extra-light
@@ -70,7 +72,14 @@ $block: ".toss-modal"
       font-family: 'icons'
       font-size: 18px
       line-height: 40px
+      text-align: center
       color: $c-text-primary
+      transition: all .5s
+
+    &:hover
+
+      &:after
+        opacity: .75
 
     &_type_inner
       background-color: transparent
@@ -167,8 +176,12 @@ $block: ".toss-modal"
       margin-bottom: 20px
 
 
-  &__title-marked
+  &__title-bold
     font-weight: 600
+
+
+  &__title-light
+    font-weight: 300
 
 
   // $Modal window subtitle
