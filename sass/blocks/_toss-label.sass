@@ -77,14 +77,17 @@ $block: ".toss-label"
   &:not(:last-child)
     margin-right: 10px
 
-  &_adjust_clear
+  &_type_clearable
     padding-right: 35px
+
+  &_type_sortable
+    cursor: move
 
   // $Common label MOD: size extra large
   &_size_xl
     padding: 17px 35px
 
-  &_size_xl#{&}_adjust_clear
+  &_size_xl#{&}_type_clearable
     padding-right: 85px
 
 
@@ -92,35 +95,35 @@ $block: ".toss-label"
   &_size_l
     padding: 15px 30px
 
-  &_size_l#{&}_adjust_clear
+  &_size_l#{&}_type_clearable
     padding-right: 75px
 
   // $Common label MOD: size medium
   &_size_m
     padding: 12px 25px
 
-  &_size_m#{&}_adjust_clear
+  &_size_m#{&}_type_clearable
     padding-right: 65px
 
   // $Common label MOD: size small
   &_size_s
     padding: 10px 20px
 
-  &_size_s#{&}_adjust_clear
+  &_size_s#{&}_type_clearable
     padding-right: 55px
 
   // $Common label MOD: size extra small
   &_size_xs
     padding: 7px 15px
 
-  &_size_xs#{&}_adjust_clear
+  &_size_xs#{&}_type_clearable
     padding-right: 45px
 
   // $Common label MOD: size 2 extra small
   &_size_xxs
     padding: 5px 10px
 
-  &_size_xxs#{&}_adjust_clear
+  &_size_xxs#{&}_type_clearable
     padding-right: 35px
 
   // $Common label MOD: state visible
