@@ -22,7 +22,7 @@
   color: $color
 
 
-=label-with-icon-left($icon: '', $icon-color: #fff, $size: 18px)
+=label-with-icon-left($icon: '', $icon-color: $c-text-light, $size: 18px)
 
   &:before
     content: '#{$icon}'
@@ -36,7 +36,7 @@
     vertical-align: middle
 
 
-=label-with-icon-right($icon: '', $icon-color: #fff, $size: 18px)
+=label-with-icon-right($icon: '', $icon-color: $c-text-light, $size: 18px)
 
   &:after
     content: '#{$icon}'
@@ -55,7 +55,7 @@ $block: ".toss-label"
 
 #{$block}
   $background-color: $c-gray-dark
-  $color: #fff
+  $color: $c-text-light
   +label-common($background-color: $background-color, $color: $color)
 
   position: relative
@@ -200,9 +200,6 @@ $block: ".toss-label"
 
     &:hover
       background-color: rgba(0, 0, 0, .6)
-
-    &:focus
-      color: #FFF
 
 
   // $Common label variations:

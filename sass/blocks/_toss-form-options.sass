@@ -151,7 +151,7 @@ $block: ".toss-form-options"
     white-space: nowrap
     text-align: center
     cursor: pointer
-    background-color: #FFF
+    background-color: $c-bg-light
     transition: all .3s
 
     // $Form options option CONTEXT: $Common form options radio STATE: checked
@@ -160,14 +160,14 @@ $block: ".toss-form-options"
     #{$block}__checkbox:checked ~ &,
     &_state_active
       background-color: $c-accent-green
-      color: #fff
+      color: $c-text-light
       cursor: default
 
     #{$block}__radio:checked ~ &_type_border,
     #{$block}__checkbox:checked ~ &_type_border,
     &_type_border#{&}_state_active
-      background-color: #FFF
-      color: #4c4c4c
+      background-color: $c-bg-light
+      color: $c-text-primary
 
     // $Form options option CONTEXT: $Common form options option first
     #{$block}__option:first-of-type &
@@ -181,17 +181,14 @@ $block: ".toss-form-options"
       #{$block}__option:nth-of-type(2n + 1) &
         border-left: 1px solid $c-border-primary
 
-    @media screen and (max-width: 480px)
-      padding: 10px
-
     &:hover
-      color: #4c4c4c
-      background-color: #f0f0f0
+      color: $c-text-primary
+      background-color: $c-gray-ultra-light
 
       #{$block}__radio:checked ~ &,
       #{$block}__checkbox:checked ~ &
         background-color: $c-accent-green
-        color: #fff
+        color: $c-text-light
 
     // $Form options option text MOD: type border
     &_type_border
@@ -210,27 +207,27 @@ $block: ".toss-form-options"
           background-color: $c-accent-green
 
       &:hover
-        background-color: #FFF
+        background-color: $c-bg-light
 
         #{$block}__radio:checked ~ &,
         #{$block}__checkbox:checked ~ &
-          color: #4c4c4c
-          background-color: #FFF
+          color: $c-text-primary
+          background-color: $c-bg-light
 
         &:after
-          background-color: #f0f0f0
+          background-color: $c-gray-ultra-light
 
     // $Form options option text MOD: state active
     &_state_active
       &:hover
-        color: #fff
+        color: $c-text-light
         background-color: $c-accent-green
 
     // $Form options option text MOD: type border state active
     &_type_border#{&}_state_active
       &:hover
-        color: #4c4c4c
-        background-color: #FFF
+        color: $c-text-primary
+        background-color: $c-bg-light
 
       &:after
         background-color: $c-accent-green
