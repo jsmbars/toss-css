@@ -31,7 +31,7 @@ $block: ".toss-form-checkbox"
     margin-bottom: 10px
     font-family: $f-sans
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 600
     line-height: 1.2
 
@@ -61,13 +61,13 @@ $block: ".toss-form-checkbox"
   &__input-label-text
     position: relative
     display: inline-block
-    min-height: 20px
+    min-height: 25px
     font-family: $f-sans
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 400
-    line-height: 20px
-    padding-left: 30px
+    line-height: 25px
+    padding-left: 35px
 
     #{$block}__input:disabled ~ &
       cursor: not-allowed
@@ -78,36 +78,36 @@ $block: ".toss-form-checkbox"
       top: 0
       left: 0
       display: block
-      width: 20px
-      height: 20px
-      background-color: map-get($app-palette, bg-light)
-      border: 1px solid map-get($app-palette, border-primary)
+      width: 25px
+      height: 25px
+      background-color: $c-bg-light
+      border: 1px solid $c-border-primary
       border-radius: 2px
 
       #{$block}__input:checked ~ &
-        background-color: map-get($app-palette, accent-blue)
-        border-color: map-get($app-palette, accent-blue)
+        background-color: $c-accent-green
+        border-color: $c-accent-green
 
       #{$block}__input:disabled ~ &,
       #{$block}__input:checked:disabled ~ &,
-        background-color: map-get($app-palette, bg-secondary)
-        border-color: map-get($app-palette, border-primary)
+        background-color: $c-bg-secondary
+        border-color: $c-border-primary
 
     &:after
       content: "\e914"
       box-sizing: border-box
       position: absolute
-      top: 1px
-      right: 1px
-      bottom: 1px
-      left: 1px
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
       display: block
-      width: 20px
-      height: 20px
+      width: 25px
+      height: 25px
       font-family: icons
-      font-size: 16px
-      line-height: 20px
-      color: map-get($app-palette, text-light)
+      font-size: 18px
+      line-height: 25px
+      color: $c-text-light
       text-align: center
       visibility: hidden
 
@@ -115,11 +115,11 @@ $block: ".toss-form-checkbox"
         visibility: visible
 
       #{$block}__input:checked:disabled ~ &
-        color: map-get($app-palette, text-primary)
+        color: $c-text-primary
 
     // $Common form checkbox input label text MOD: no-label text
     &_type_no-label
-      padding-left: 20px
+      padding-left: 25px
 
     // $Common form checkbox input label text MOD: type reversed label text
     &_type_reversed
@@ -145,11 +145,11 @@ $block: ".toss-form-checkbox"
 
     // $Common form checkbox input label text MOD: adjust field
     &_adjust_field
-      min-height: 45px
+      min-height: 50px
 
     // $Common form checkbox input label text MOD: adjust fluid field
     &_adjust_field-fluid
-      min-height: 45px
+      min-height: 50px
 
       @media screen and (max-width: 960px)
-        min-height: 20px
+        min-height: 25px

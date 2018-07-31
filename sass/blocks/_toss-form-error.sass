@@ -18,7 +18,7 @@ $block: ".toss-form-error"
   display: block
   position: relative
   padding: 8px 10px 8px 30px
-  background-color: map-get($app-palette, accent-red)
+  background-color: $c-accent-red
   border-radius: 2px
 
   &:before
@@ -30,28 +30,33 @@ $block: ".toss-form-error"
     font-family: icons
     font-size: 10px
     line-height: 1
-    color: map-get($app-palette, text-light)
-
-  // $Common form error message MOD: position above
-  &_position_above
-    margin-bottom: 10px
-
-  // $Common form error message MOD: position below
-  &_position_below
-    margin-top: 10px
+    color: $c-text-light
 
   // $Common form error message MOD: role general
   &_role_general
     padding: 15px 15px 15px 40px
-    margin-bottom: 30px
 
     &:before
       top: 18px
       left: 15px
       font-size: 14px
 
+  // $Common form error message MOD: position above
+  &_position_above
+    margin-bottom: 10px
+
+  &_position_above#{&}_role_general
+    margin-bottom: 30px
+
+  // $Common form error message MOD: position below
+  &_position_below
+    margin-top: 10px
+
+  &_position_below#{&}_role_general
+    margin-top: 30px
+
   // $Common form error message MOD: tooltip layout
-  &_tooltip
+  &_type_tooltip
     position: absolute
     z-index: 10
 
@@ -65,7 +70,7 @@ $block: ".toss-form-error"
       display: block
 
   // $Common form error message MOD: tooltip top left positioned
-  &_tooltip_top-left
+  &_type_tooltip_top-left
     left: 0
     bottom: 100%
     margin-bottom: 5px
@@ -73,15 +78,15 @@ $block: ".toss-form-error"
     &:after
       top: 100%
       left: 15px
-      border-top: 5px solid map-get($app-palette, accent-red)
+      border-top: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
-  &_tooltip_top-left#{&}_tooltip_context-label
+  &_type_tooltip_top-left#{&}_type_tooltip_context-label
     bottom: calc(100% - 25px)
 
   // $Common form error message MOD: tooltip top right positioned
-  &_tooltip_top-right
+  &_type_tooltip_top-right
     right: 0
     bottom: 100%
     margin-bottom: 5px
@@ -89,15 +94,15 @@ $block: ".toss-form-error"
     &:after
       top: 100%
       right: 15px
-      border-top: 5px solid map-get($app-palette, accent-red)
+      border-top: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
-  &_tooltip_top-right#{&}_tooltip_context-label
+  &_type_tooltip_top-right#{&}_type_tooltip_context-label
     bottom: calc(100% - 25px)
 
   // $Common form error message MOD: tooltip bottom left positioned
-  &_tooltip_bottom-left
+  &_type_tooltip_bottom-left
     left: 0
     top: 100%
     margin-top: 5px
@@ -105,12 +110,12 @@ $block: ".toss-form-error"
     &:after
       bottom: 100%
       left: 15px
-      border-bottom: 5px solid map-get($app-palette, accent-red)
+      border-bottom: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
   // $Common form error message MOD: tooltip bottom right positioned
-  &_tooltip_bottom-right
+  &_type_tooltip_bottom-right
     right: 0
     top: 100%
     margin-top: 5px
@@ -118,7 +123,7 @@ $block: ".toss-form-error"
     &:after
       bottom: 100%
       right: 15px
-      border-bottom: 5px solid map-get($app-palette, accent-red)
+      border-bottom: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
@@ -130,9 +135,9 @@ $block: ".toss-form-error"
     font-family: $f-sans
     font-size: 12px
     font-weight: 400
-    color: map-get($app-palette, text-light)
+    color: $c-text-light
 
-    #{$block}_tooltip &
+    #{$block}_type_tooltip &
       font-size: 11px
 
     #{$block}_role_general &

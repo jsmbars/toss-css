@@ -34,7 +34,7 @@ $block: ".toss-form-textarea"
     margin-bottom: 15px
     font-family: $f-sans
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 600
     line-height: 1
 
@@ -60,81 +60,81 @@ $block: ".toss-form-textarea"
       height: 180px
       font-family: $f-sans
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
-      border: 1px solid map-get($app-palette, border-primary)
+      border: 1px solid $c-border-primary
       border-radius: 0
       padding: 15px 10px
       box-shadow: none
-      background-color: map-get($app-palette, light-primary)
+      background-color: $c-bg-light
 
       #{$block}_state_error &
-        border-color: map-get($app-palette, accent-red)
-        color: map-get($app-palette, accent-red)
+        border-color: $c-accent-red
+        color: $c-accent-red
 
       &:invalid
         box-shadow: none
 
       &:focus
         outline: none
-        box-shadow: 0 0 3px -1px map-get($app-palette, accent-blue)
+        box-shadow: 0 0 3px -1px $c-accent-blue
 
       &:disabled
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
         cursor: not-allowed
 
       &:read-only
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
 
       &::-webkit-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:placeholder-shown
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
 
   // $Common form textarea note
@@ -143,4 +143,4 @@ $block: ".toss-form-textarea"
     font-family: $f-sans
     font-size: 14px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary

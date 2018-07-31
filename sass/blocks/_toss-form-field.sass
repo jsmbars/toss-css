@@ -54,7 +54,7 @@ $block: ".toss-form-field"
     margin-bottom: 10px
     font-family: $f-sans
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 400
     line-height: 1
 
@@ -112,6 +112,12 @@ $block: ".toss-form-field"
   &__label-text
 
 
+  // $Common form field tags
+  &__tags
+    display: block
+    width: 100%
+
+
   // $Common form field input
   &__input
     position: relative
@@ -126,11 +132,11 @@ $block: ".toss-form-field"
         font-family: icons
         font-size: 18px
         line-height: 1
-        color: map-get($app-palette, text-secondary)
+        color: $c-text-secondary
         transform: translateY(-50%)
 
       #{$block}_role_search#{$block}_state_error &
-        color: map-get($app-palette, accent-red)
+        color: $c-accent-red
 
     // $Common form field input CONTEXT: $Common form MOD: role control
     #{$block}_role_control &,
@@ -145,11 +151,11 @@ $block: ".toss-form-field"
       padding: 15px 10px
       font-family: $f-sans
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
-      background-color: map-get($app-palette, bg-light)
-      border: 1px solid map-get($app-palette, border-primary)
+      background-color: $c-bg-light
+      border: 1px solid $c-border-primary
       border-radius: 2px
 
       #{$block}_adjust_quick-access-search &
@@ -160,71 +166,71 @@ $block: ".toss-form-field"
         padding-left: 35px
 
       #{$block}_state_error &
-        border-color: map-get($app-palette, accent-red)
-        color: map-get($app-palette, accent-red)
+        border-color: $c-accent-red
+        color: $c-accent-red
 
       &:invalid
         box-shadow: none
 
       &:focus
         outline: none
-        box-shadow: 0 0 3px -1px map-get($app-palette, accent-blue)
+        box-shadow: 0 0 3px -1px $c-accent-blue
 
       &:disabled
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
         cursor: not-allowed
 
       &:not([type="date"]):read-only
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
 
       &::-webkit-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:placeholder-shown
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
 
   // $Common form field note
@@ -233,4 +239,4 @@ $block: ".toss-form-field"
     font-family: $f-sans
     font-size: 14px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary

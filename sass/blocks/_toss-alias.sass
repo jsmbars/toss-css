@@ -26,7 +26,7 @@ $block: ".toss-alias"
     font-family: $f-sans
     font-size: 14px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     text-decoration: none
 
     &:hover,
@@ -46,22 +46,22 @@ $block: ".toss-alias"
     font-size: 20px
     line-height: 37px
     font-weight: 300
-    color: map-get($app-palette, text-secondary)
-    transition: all .4s
+    color: $c-text-secondary
+    transition: all .3s
 
     #{$block}__link:hover &
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
 
     // $Alias icon MOD: type solid
     &_type_solid
-      background-color: map-get($app-palette, gray-medium)
-      border: 1px solid map-get($app-palette, gray-medium)
+      background-color: $c-gray-medium
+      border: 1px solid $c-gray-medium
       border-radius: 50%
-      color: map-get($app-palette, text-light)
+      color: $c-text-light
 
       #{$block}__link:hover &
         background-color: transparent !important
-        border-color: map-get($app-palette, gray-dark) !important
+        border-color: $c-gray-dark !important
 
 
   // $Alias text
@@ -69,11 +69,11 @@ $block: ".toss-alias"
     display: block
     text-align: center
     font-size: 14px
-    color: map-get($app-palette, text-secondary)
-    transition: all .4s
+    color: $c-text-secondary
+    transition: all .3s
 
     #{$block}__link:hover &
-      color: map-get($app-palette, text-primary) !important
+      color: $c-text-primary !important
 
     @media screen and (max-width: 480px)
       font-size: 12px

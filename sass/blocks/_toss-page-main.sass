@@ -46,12 +46,12 @@ $block: ".toss-page-main"
       padding: 30px 20px
 
     @media screen and (max-width: 480px)
-      padding: 20px 15px
+      padding: 25px 15px
 
 
   &__dashboard
     &_role_primary
-      background-color: map-get($app-palette, bg-light)
+      background-color: $c-bg-light
 
     &_role_secondary
       padding-bottom: 0
@@ -63,17 +63,6 @@ $block: ".toss-page-main"
     width: 100%
     max-width: 1200px
     margin: 0 auto
-
-
-  // $Page main panel
-  &__panel
-    display: block
-    width: 100%
-    padding: 30px
-    background-color: map-get($app-palette, bg-light)
-
-    @media screen and (max-width: 1280px)
-      padding: 20px
 
 
   // $Page main info group
@@ -112,7 +101,7 @@ $block: ".toss-page-main"
     font-family: $f-sans
     font-size: 24px
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
     @media screen and (max-width: 960px)
       text-align: center
@@ -137,8 +126,8 @@ $block: ".toss-page-main"
     vertical-align: middle
     text-align: center
     border-radius: 50%
-    background-color: map-get($app-palette, accent-green)
-    color: map-get($app-palette, text-light)
+    background-color: $c-accent-green
+    color: $c-text-light
 
 
   // $Page main actions
@@ -189,7 +178,7 @@ $block: ".toss-page-main"
     font-family: $f-sans
     font-size: 16px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     white-space: nowrap
     cursor: pointer
     text-decoration: none
@@ -199,7 +188,7 @@ $block: ".toss-page-main"
       content: ''
       display: inline-block
       font-family: icons
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
 
     &:before
       margin-right: 10px
@@ -208,11 +197,11 @@ $block: ".toss-page-main"
       margin-left: 10px
 
     &:hover
-      color: map-get($app-palette, text-secondary)
+      color: $c-text-secondary
 
       &:before,
       &:after
-        color: map-get($app-palette, text-secondary)
+        color: $c-text-secondary
 
     // $Page main dropdown switch MOD: role filter
     &_role_filter
@@ -249,8 +238,8 @@ $block: ".toss-page-main"
     width: 100%
     margin-top: 20px
     padding: 20px 30px
-    border-bottom: 1px solid map-get($app-palette, border-primary)
-    border-top: 1px solid map-get($app-palette, border-primary)
+    border-bottom: 1px solid $c-border-primary
+    border-top: 1px solid $c-border-primary
 
 
   // $Page main text placeholder
@@ -258,5 +247,5 @@ $block: ".toss-page-main"
     font-family: $f-sans
     font-size: 18px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 

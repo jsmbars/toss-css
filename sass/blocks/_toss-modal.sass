@@ -15,11 +15,14 @@
 $block: ".toss-modal"
 
 #{$block}
-  position: relative
+  position: relative !important
+  top: auto !important
+  left: auto !important
+  bottom: auto !important
+  right: auto !important
   display: block
-  background-color: map-get($app-palette, bg-light)
+  background-color: $c-bg-light
   border-radius: 10px
-  overflow: hidden
   width: 95%
   max-width: 800px
   margin: 100px auto 100px
@@ -35,24 +38,98 @@ $block: ".toss-modal"
   &_state_hidden
     display: none
 
+  &_role_service,
+  &_role_action
+    max-width: 800px
+
+  &_role_info
+    max-width: 640px
+
+  &_role_notification
+    max-width: 400px
+
+
+  // $Modal window close
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 10003
+    display: block
+    width: 40px
+    height: 40px
+    margin: 0
+    padding: 0
+    border: none
+    border-radius: 50%
+    background-color: $c-gray-extra-light
+    cursor: pointer
+    outline: none
+    transform: translate(50%, -50%)
+
+    &:after
+      content: '\e91e'
+      font-family: 'icons'
+      font-size: 18px
+      line-height: 40px
+      text-align: center
+      color: $c-text-primary
+      transition: all .3s
+
+    &:hover
+
+      &:after
+        opacity: .75
+
+    &_type_inner
+      background-color: transparent
+      top: 20px
+      right: 10px
+      transform: translate(0, 0)
+
 
   // $Modal window header
   // $Modal window footer
   &__header,
   &__footer
+    position: relative
     width: 100%
     padding: 30px 20px
-    background-color: map-get($app-palette, bg-secondary)
-    text-align: center
+    border-radius: 10px
+    background-color: $c-bg-secondary
+
+    @media screen and (max-width: 480px)
+      padding: 30px 15px
 
     &:only-child
-      background-color: map-get($app-palette, bg-light)
+      background-color: $c-bg-light
+
+
+  // $Modal window header
+  &__header
+
+    #{$block}_role_service &
+      text-align: center
+
+    #{$block}_role_action &,
+    #{$block}_role_info &
+      padding-right: 50px
+
+
+  &__header-group
+
+    &:not(:last-child)
+      margin-bottom: 20px
 
 
   // $Modal window content
   &__content
     width: 100%
     padding: 30px 20px
+    border-radius: 10px
+
+    @media screen and (max-width: 480px)
+      padding: 25px 15px
 
 
   // $Modal window content group
@@ -90,14 +167,26 @@ $block: ".toss-modal"
   // $Modal window title
   &__title
     font-family: $f-sans
-    font-size: 30px
+    font-size: 24px
     line-height: 1
-    font-weight: 600
-    color: map-get($app-palette, text-primary)
-    text-align: center
+    font-weight: 400
+    color: $c-text-primary
+
+    #{$block}_role_service &
+      text-align: center
+      font-size: 30px
+      font-weight: 600
 
     &:not(:last-child)
       margin-bottom: 20px
+
+
+  &__title-bold
+    font-weight: 600
+
+
+  &__title-light
+    font-weight: 300
 
 
   // $Modal window subtitle
@@ -105,7 +194,7 @@ $block: ".toss-modal"
     font-family: $f-sans
     font-size: 20px
     line-height: 1.5
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
     font-weight: 400
 
     &:not(:last-child)
@@ -124,7 +213,7 @@ $block: ".toss-modal"
     font-family: $f-sans
     font-size: 14px
     line-height: 1.5
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 500
 
 
@@ -134,7 +223,7 @@ $block: ".toss-modal"
     font-size: 16px
     line-height: 1
     font-weight: 400
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
     text-decoration: none
     opacity: 1
     transition: all .3s
@@ -145,25 +234,33 @@ $block: ".toss-modal"
 
   @at-root
     // $Modal window portal
+    .ReactModalPortal,
     &-portal
-      position: fixed
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      z-index: 10000
 
       // $Modal window portal MOD: state hidden
       &_state_hidden
         display: none
 
+
     // $Modal window overlay
+    .ReactModal__Overlay,
     &-overlay
-      position: relative
+      position: fixed !important
+      top: 0 !important
+      right: 0 !important
+      bottom: 0 !important
+      left: 0 !important
+      z-index: 10001 !important
       display: block
-      width: 100%
-      height: 100%
-      z-index: 10001
-      overflow-x: hidden
-      overflow-y: auto
-      background-color: rgba(0,0,0,.75)
+      overflow-x: hidden !important
+      overflow-y: auto !important
+      background-color: rgba(0,0,0,.75) !important
+
+
+    .ReactModal__Body--open
+      overflow: hidden
+
+
+    .ReactModal__Body--open.iosBugFixModalInput
+      position: fixed
+      overflow: visible

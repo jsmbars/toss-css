@@ -33,9 +33,6 @@ $block: ".toss-form-select"
     justify-content: flex-end
     align-items: center
 
-  // $Common form select MOD: role search
-  &_role_search
-
   // $Common form select MOD: no top label
   &_no-label
     padding-top: 20px
@@ -43,8 +40,8 @@ $block: ".toss-form-select"
   // $Common form select MOD: size small
   &_size_s
 
-  // $Common form select MOD: size narrow
-  &_size_narrow
+  // $Common form select MOD: type narrow
+  &_type_narrow
 
 
   // $Common form select label
@@ -54,7 +51,7 @@ $block: ".toss-form-select"
     margin-bottom: 10px
     font-family: $f-sans
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 600
     line-height: 1
 
@@ -112,8 +109,8 @@ $block: ".toss-form-select"
   &__label-text
 
 
-  // $Common form select input
-  &__input
+  // $Common form select control
+  &__control
     position: relative
 
     // $Common form select input CONTEXT: $Common form select MOD: role control
@@ -131,12 +128,12 @@ $block: ".toss-form-select"
       display: block
       font-family: icons
       font-size: 20px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       line-height: 1
       transform: translateY(-50%)
 
       #{$block}_state_error &
-        color: map-get($app-palette, accent-red)
+        color: $c-accent-red
 
     & select
       display: block
@@ -145,39 +142,39 @@ $block: ".toss-form-select"
       padding: 15px 40px 15px 10px
       font-family: $f-sans
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
       outline: none
-      border: 1px solid map-get($app-palette, border-primary)
+      border: 1px solid $c-border-primary
       border-radius: 0
       background: none
-      background-color: map-get($app-palette, light-primary)
+      background-color: $c-bg-light
       appearance: none
       -moz-appearance: none
       -webkit-appearance: none
       transition: all .3s
 
       #{$block}_state_error &
-        border-color: map-get($app-palette, accent-red)
-        color: map-get($app-palette, accent-red)
+        border-color: $c-accent-red
+        color: $c-accent-red
 
       &:invalid
         box-shadow: none
 
       &:focus
         outline: none
-        box-shadow: 0 0 3px -1px map-get($app-palette, accent-blue)
+        box-shadow: 0 0 3px -1px $c-accent-blue
 
       &::-ms-expand
         display: none
 
       &:focus::-ms-value
         background-color: transparent
-        color: map-get($app-palette, text-primary)
+        color: $c-text-primary
 
       &:disabled
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
         cursor: not-allowed
 
     // $Common form select option
@@ -187,11 +184,15 @@ $block: ".toss-form-select"
       max-width: 100%
       font-family: $f-sans
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
       outline: none
       border: none
+
+
+  // $Common form select react select component wrap
+  &__component
 
 
   // $Common form select note
@@ -200,4 +201,301 @@ $block: ".toss-form-select"
     font-family: $f-sans
     font-size: 14px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
+
+
+  // React-select adjusments
+  & .Select-color-indicator
+    display: inline-block
+    margin-right: 5px
+    width: 10px
+    height: 10px
+    background-color: $c-gray-extra-light
+    border-radius: 50%
+
+    &_priority_high
+      background-color: $c-accent-red
+
+    &_priority_medium
+      background-color: $c-accent-yellow
+
+    &_priority_low
+      background-color: $c-accent-green
+
+    &_status_accepted,
+    &_status_completed
+      background-color: $c-accent-green
+
+    &_status_rejected,
+    &_status_deleted
+      background-color: $c-accent-red
+
+    &_status_waiting
+      background-color: $c-accent-yellow
+
+    &_status_pending
+      background-color: $c-gray-medium
+
+
+  & .Select-control
+    height: 50px
+    border-radius: 2px
+    border-color: $c-border-primary
+
+  & .Select-multi-value-wrapper
+    line-height: 48px
+
+  & .Select--multi .Select-multi-value-wrapper
+    padding: 5px 0
+    vertical-align: middle
+    line-height: 1
+
+  & .Select-placeholder,
+  & .Select--single > .Select-control .Select-value
+    line-height: 48px
+    padding-left: 20px
+    padding-right: 10px
+    color: $c-text-secondary
+
+  & .has-value.Select--single > .Select-control .Select-value .Select-value-label,
+  & .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label
+    color: $c-text-secondary
+    font-size: 14px
+
+  & .Select-input
+    vertical-align: middle
+    line-height: 1
+    height: auto
+
+    & input
+      line-height: 1
+      height: 30px
+      padding: 0
+
+  & .Select-option
+    padding: 10px 10px 10px 20px
+    font-size: 14px
+
+  & .Select--multi .Select-input
+    margin-top: 5px
+
+  & .Select--multi .Select-value
+    margin-left: 10px
+    background-color: $c-accent-green-medium
+    border: none
+    border-radius: 5px
+    line-height: 1
+    white-space: nowrap
+    direction: rtl
+    vertical-align: middle
+
+    &_priority_high
+      background-color: $c-accent-red
+
+    &_priority_medium
+      background-color: $c-accent-yellow
+
+    &_priority_low
+      background-color: $c-accent-green
+
+    &_status_accepted,
+    &_status_completed
+      background-color: $c-accent-green
+
+    &_status_rejected,
+    &_status_deleted
+      background-color: $c-accent-red
+
+    &_status_waiting
+      background-color: $c-accent-yellow
+
+    &_status_pending
+      background-color: $c-gray-medium
+
+  & .Select--multi .Select-value-icon
+    position: relative
+    z-index: 1
+    background-color: transparent
+    border: none
+    color: $c-text-light
+    font-size: 20px
+    padding: 3px 7px 3px 8px
+    overflow: hidden
+    direction: ltr
+
+    @media screen and (max-width: 480px)
+      padding-left: 6px
+      padding-right: 5px
+
+    &:after
+      content: ""
+      z-index: -1
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      display: block
+      background-color: rgba(0,0,0,.3)
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+      transition: all .3s
+
+    &:hover
+      &:after
+        background-color: rgba(0,0,0,.6)
+
+  & .Select--multi .Select-value-label
+    background-color: transparent
+    white-space: nowrap
+    text-transform: uppercase
+    color: $c-text-primary
+    border: none
+    padding: 3px 10px
+    direction: ltr
+    font-size: 12px
+
+    @media screen and (max-width: 480px)
+      font-size: 11px
+      padding: 3px 6px
+
+  & .Select-menu-outer
+    border-color: $c-border-primary
+    margin-top: 0
+    border-top: none
+
+  &_state_error
+    & .Select-control,
+    & .Select-menu-outer
+      border-color: $c-accent-red
+
+  &_state_inactive
+    position: relative
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 10
+      display: block
+      width: 100%
+      height: 100%
+      background-color: rgba(20,20,20,.2)
+
+  &_icon_time
+    & .Select-arrow
+      display: none
+
+  &_role_time
+    & .Select-placeholder,
+    & .Select--single > .Select-control .Select-value
+      padding-left: 35px
+
+      @media screen and (max-width: 640px)
+        padding-left: 10px
+
+    & .Select-option
+      padding-left: 35px
+
+      @media screen and (max-width: 640px)
+        padding-left: 10px
+
+    & .Select-input
+      padding-left: 35px
+
+      @media screen and (max-width: 640px)
+        padding-left: 10px
+
+  &_role_indicator
+
+    & .Select--multi .Select-value
+      background-color: transparent
+
+    & .Select--multi .Select-value-label
+      padding: 10px
+      color: $c-text-primary
+
+    & .Select--multi .Select-value-icon
+      display: none
+
+  &_role_staff-member
+    & .Select-control
+      height: 75px
+
+    & .Select-multi-value-wrapper
+      line-height: 73px
+
+    & .Select-placeholder,
+    & .Select--single > .Select-control .Select-value
+      line-height: 73px
+      text-overflow: clip
+
+    & .Select--single > .Select-control .Select-value .Select-value-label
+      line-height: 60px
+
+    & .Select-staff-member
+      display: inline-block
+      width: 100%
+      white-space: nowrap
+
+    & .Select-staff-member-avatar
+      display: inline-block
+      width: 50px
+      height: 50px
+      overflow: hidden
+      border-radius: 50%
+      vertical-align: middle
+
+      @media screen and (max-width: 479px)
+        width: 40px
+        height: 40px
+
+      & > img
+        display: block
+        width: 100%
+        max-width: 100%
+
+    & .Select-staff-member-info
+      display: inline-block
+      width: calc(100% - 50px)
+      padding: 0 20px 0 10px
+      vertical-align: middle
+      white-space: normal
+
+      @media screen and (max-width: 479px)
+        width: calc(100% - 40px)
+        padding-left: 5px
+
+    & .Select-staff-member-name
+      display: inline-block
+      width: 100%
+      max-width: 100%
+      font-size: 18px
+
+      @media screen and (max-width: 479px)
+        font-size: 16px
+
+    & .Select-staff-member-type
+      display: inline-block
+
+  &_type_narrow
+
+    & .Select-control
+      height: 40px
+
+    & .Select-multi-value-wrapper
+      line-height: 38px
+
+    & .Select-placeholder,
+    & .Select--single > .Select-control .Select-value
+      line-height: 38px
+
+    & .Select-input
+
+      & input
+        line-height: 1
+        height: 30px
+        padding: 0

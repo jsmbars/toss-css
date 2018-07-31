@@ -31,7 +31,7 @@ $block: ".toss-error"
     max-width: 960px
     margin: 100px auto 100px
     padding: 40px
-    background-color: map-get($app-palette, bg-light)
+    background-color: $c-bg-light
     border-radius: 10px
 
     @media screen and (max-width: 960px)
@@ -107,7 +107,7 @@ $block: ".toss-error"
     font-family: $f-sans
     font-size: 40px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 400
 
     #{$block}_role_stack &
@@ -141,7 +141,7 @@ $block: ".toss-error"
     font-family: $f-sans
     font-size: 20px
     line-height: 1.2
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 300
 
     #{$block}_role_stack &
@@ -170,12 +170,12 @@ $block: ".toss-error"
   &__text-link
     font-size: inherit
     line-height: inherit
-    color: map-get($app-palette, accent-blue)
+    color: $c-accent-blue
     text-decoration: underline
 
     &:hover
       text-decoration: none
-      color: map-get($app-palette, accent-blue)
+      color: $c-accent-blue
 
 
   // $Error actions

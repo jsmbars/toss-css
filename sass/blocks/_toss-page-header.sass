@@ -18,8 +18,8 @@ $block: ".toss-page-header"
   display: block
   width: 100%
   padding: 0 40px
-  background-color: map-get($app-palette, bg-light)
-  border-bottom: 1px solid map-get($app-palette, border-secondary)
+  background-color: $c-bg-light
+  border-bottom: 1px solid $c-border-secondary
 
   @media screen and (max-width: 1280px)
     padding: 0 40px
@@ -73,11 +73,11 @@ $block: ".toss-page-header"
     font-size: 20px
     line-height: 1
     font-weight: 600
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     text-transform: uppercase
     text-decoration: none
     opacity: 1
-    transition: all .5s
+    transition: all .3s
 
     &:hover
       text-decoration: none
@@ -94,9 +94,9 @@ $block: ".toss-page-header"
     line-height: 0
     color: transparent
     outline: none
-    border: 1px solid map-get($app-palette, gray-dark)
+    border: 1px solid $c-gray-dark
     border-radius: 50%
-    transition: background-color .4s
+    transition: background-color .3s
 
     &:before
       content: ""
@@ -110,11 +110,11 @@ $block: ".toss-page-header"
       font-size: 24px
       line-height: 40px
       text-align: center
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
 
     &:hover,
     &_state_active
-      background-color: map-get($app-palette, gray-ultra-light)
+      background-color: $c-gray-ultra-light
 
     &_state_active
       &:after
@@ -124,7 +124,7 @@ $block: ".toss-page-header"
         left: 50%
         z-index: 10002
         margin-left: -10px
-        border-bottom: 10px solid map-get($app-palette, border-light)
+        border-bottom: 10px solid $c-border-light
         border-right: 10px solid transparent
         border-left: 10px solid transparent
 
@@ -143,7 +143,7 @@ $block: ".toss-page-header"
       border-color: transparent
 
       @media screen and (max-width: 480px)
-        border-color: map-get($app-palette, gray-dark)
+        border-color: $c-gray-dark
 
       &:before
         content: "\e908"
@@ -155,13 +155,13 @@ $block: ".toss-page-header"
         background-color: transparent
 
         @media screen and (max-width: 480px)
-          background-color: map-get($app-palette, gray-ultra-light)
+          background-color: $c-gray-ultra-light
 
     &_role_search#{&}_state_active
       background-color: transparent
 
       @media screen and (max-width: 480px)
-        background-color: map-get($app-palette, gray-ultra-light)
+        background-color: $c-gray-ultra-light
 
     // $Page header MOD: role profile
     &_role_profile
@@ -194,8 +194,8 @@ $block: ".toss-page-header"
     z-index: 10000
     display: none
     padding: 10px 0
-    background-color: map-get($app-palette, bg-light)
-    border: 1px solid map-get($app-palette, border-primary)
+    background-color: $c-bg-light
+    border: 1px solid $c-border-primary
     border-radius: 10px
     box-shadow: 0 5px 30px 0 rgba(0,0,0,.25)
 
@@ -307,7 +307,7 @@ $block: ".toss-page-header"
       font-family: icons
       font-size: 20px
       line-height: 1
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
 
     // $Page header dropdown label MOD: role close
     &_role_close
