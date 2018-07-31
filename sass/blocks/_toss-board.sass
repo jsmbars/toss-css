@@ -19,8 +19,31 @@ $block: ".toss-board"
   width: 100%
   background-color: $c-bg-light
 
-
+  // $Board inner
   &__inner
     display: block
     width: 100%
     padding: 30px 20px
+
+    @media screen and (max-width: 480px)
+      padding: 25px 15px
+
+
+  // $Board actions
+  &__actions
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+    // $Board actions MOD: position above
+    &_position_above
+      margin-bottom: 30px
+
+    // $Board actions MOD: position below
+    &_position_below
+      margin-top: 30px
+
+
+  // $Board action
+  &__action

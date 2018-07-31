@@ -98,6 +98,9 @@ $block: ".toss-modal"
     border-radius: 10px
     background-color: $c-bg-secondary
 
+    @media screen and (max-width: 480px)
+      padding: 30px 15px
+
     &:only-child
       background-color: $c-bg-light
 
@@ -119,12 +122,14 @@ $block: ".toss-modal"
       margin-bottom: 20px
 
 
-
   // $Modal window content
   &__content
     width: 100%
     padding: 30px 20px
     border-radius: 10px
+
+    @media screen and (max-width: 480px)
+      padding: 25px 15px
 
 
   // $Modal window content group

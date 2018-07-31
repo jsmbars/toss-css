@@ -26,6 +26,9 @@ $block: ".toss-form"
     width: 100%
     margin-bottom: 30px
 
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
     // $Common form group MOD: size half
     // $Common form group MOD: size third
     // $Common form group MOD: size fourth
@@ -46,6 +49,13 @@ $block: ".toss-form"
         &:not(#{$block}__field_adjust_nowrap)
           margin-right: 0
           margin-bottom: 30px
+
+      @media screen and (max-width: 480px)
+        margin-right: 25px
+
+        &:not(#{$block}__field_adjust_nowrap)
+          margin-right: 0
+          margin-bottom: 25px
 
     &_size_half
       flex-grow: 0
@@ -172,7 +182,7 @@ $block: ".toss-form"
       line-height: 1
       color: $c-text-primary
       transform: translate(-50%,-50%)
-      transition: all, .3s
+      transition: all .3s
 
 
   // $Common form board content
@@ -203,6 +213,9 @@ $block: ".toss-form"
     @media screen and (max-width: 960px)
       flex-direction: column
 
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
     // $Common form row MOD: justify end
     &_justify_end
       justify-content: flex-end
@@ -232,6 +245,9 @@ $block: ".toss-form"
     width: 100%
     margin-bottom: 30px
 
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
     // $Common form field MOD: size half
     // $Common form field MOD: size third
     // $Common form field MOD: size max
@@ -253,6 +269,13 @@ $block: ".toss-form"
           width: 100%
           margin-right: 0
           margin-bottom: 30px
+
+      @media screen and (max-width: 480px)
+        margin-right: 25px
+
+        &:not(#{$block}__field_adjust_nowrap)
+          margin-right: 0
+          margin-bottom: 25px
 
     &_size_half
       flex-grow: 0

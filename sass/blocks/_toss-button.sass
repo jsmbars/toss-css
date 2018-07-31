@@ -52,7 +52,7 @@
     margin-right: 8px
     font-family: icons
     font-size: $size
-    line-height: 1
+    line-height: 14px
     color: $icon-color
     font-weight: normal
     vertical-align: middle
@@ -122,6 +122,10 @@ $block: ".toss-button"
 
   &:focus
     outline: none
+
+  &_size_full-xs
+    @media screen and (max-width: 400px)
+      width: 100%
 
   // $Common button MOD: size extra large
   &_size_xl
@@ -262,7 +266,7 @@ $block: ".toss-button"
   &_icon_check
     +button-with-icon-left($icon: '\e90d')
 
-  &_icon_checked#{&}_border_accent-green
+  &_icon_check#{&}_border_accent-green
     +button-with-icon-left($icon: '\e90d', $icon-color: $c-accent-green, $icon-hover-color: #fff, $icon-active-color: #fff)
 
   // $Common button MOD: icon close
@@ -278,6 +282,9 @@ $block: ".toss-button"
 
   &_icon_pencil#{&}_border_accent-green
     +button-with-icon-left($icon: '\e91d', $icon-color: $c-accent-green, $icon-hover-color: #fff, $icon-active-color: #fff, $size: 14px)
+
+  &_icon_pencil#{&}_border_accent-blue
+    +button-with-icon-left($icon: '\e91d', $icon-color: $c-accent-blue, $icon-hover-color: #fff, $icon-active-color: #fff, $size: 14px)
 
 
   // Specific buttons

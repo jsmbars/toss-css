@@ -23,11 +23,8 @@ $block: ".toss-table"
   &_type_common
     display: table
 
-  // $Common table MOD: role bookings table
-  &_role_bookings
-
-  // $Common table MOD: role selected customers
-  &_role_selected-customers
+  &_page_offers-index-panel
+    border: none
 
 
   // $Common table group
@@ -53,8 +50,16 @@ $block: ".toss-table"
     #{$block}_type_common &
       display: table-row
 
+    #{$block}_page_offers-index-panel &
+      background-color: transparent
+
+    @media screen and (max-width: 1120px)
+      #{$block}_page_offers-index-panel &
+        flex-wrap: wrap
+
     &:nth-child(odd)
-      background-color: $c-bg-secondary
+      #{$block}_type_common &
+        background-color: $c-bg-secondary
 
     &:not(:last-child)
       border-bottom: 1px solid $c-border-primary
@@ -100,15 +105,15 @@ $block: ".toss-table"
   &__cell
     flex-grow: 1
     display: flex
-    flex-direction: row
-    justify-content: flex-start
-    align-items: center
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
     min-height: 50px
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
     color: $c-text-primary
-    padding: 10px 15px
+    padding: 15px 10px
 
     #{$block}_type_common &
       display: table-cell
@@ -123,8 +128,68 @@ $block: ".toss-table"
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
 
+      #{$block}_page_offers-index-panel &
+        border-right: none
+
     // $Common table cell first column
     &:nth-child(1)
+      #{$block}_page_offers-index-panel &
+        width: 25%
+        justify-content: flex-start
+        padding-left: 20px
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_offers-index-panel &
+          width: 50%
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_offers-index-panel &
+          width: 100%
+          padding-right: 20px
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_offers-index-panel &
+          padding-left: 15px
+          padding-right: 15px
+
+    // $Common table cell second column
+    &:nth-child(2)
+      #{$block}_page_offers-index-panel &
+        width: 50%
+        justify-content: flex-start
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_offers-index-panel &
+          width: 50%
+          padding-right: 20px
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_offers-index-panel &
+          width: 100%
+          padding-left: 20px
+          border-top: 1px solid $c-border-primary
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_offers-index-panel &
+          padding-left: 15px
+          padding-right: 15px
+
+    // $Common table cell third column
+    &:nth-child(3)
+      #{$block}_page_offers-index-panel &
+        width: 25%
+        padding-right: 20px
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_offers-index-panel &
+          width: 100%
+          padding-left: 20px
+          border-top: 1px solid $c-border-primary
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_offers-index-panel &
+          padding-left: 15px
+          padding-right: 15px
 
     // $Common table cell MOD: role header
     // $Common table cell MOD: role footer
@@ -142,15 +207,16 @@ $block: ".toss-table"
     width: 100%
 
 
+  &__info-group
+    width: 100%
+
+
   // $Common table text
   &__text
     font-family: $f-sans
     font-size: 14px
-    font-weight: 300
+    font-weight: 400
     color: $c-text-primary
-
-    & > b
-      font-weight: 600
 
     // $Common table text MOD: adjust no wrap
     &_adjust_no-wrap
@@ -163,11 +229,37 @@ $block: ".toss-table"
       word-break: break-word
       hyphens: auto
 
+  &__text-bold
+    font-weight: 600
+
+  &__text-light
+    font-weight: 300
+
+  &__text-meta,
+  &__text-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+  &__text-meta
+    font-family: $f-sans
+    color: $c-text-secondary
+    font-size: 12px
+
 
   // $Common table actions
   &__actions
     text-align: center
 
+    #{$block}_page_offers-index-panel &
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: flex-start
+
 
   // $Common table action
   &__action
+    #{$block}_page_offers-index-panel &:nth-child(1)
+      margin-right: 10px
