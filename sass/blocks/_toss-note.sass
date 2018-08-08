@@ -14,8 +14,8 @@
 //////////////////////////////////////// Block styles
 $block: ".toss-note"
 #{$block}
-  display: block
   position: relative
+  display: block
   padding: 15px
   background-color: $c-gray-medium
 
@@ -44,22 +44,69 @@ $block: ".toss-note"
     background-color: $c-accent-pink
 
   // $Note MOD: icon alert
-  &_icon_alert
+  &_icon_alert,
+  &_icon_check
     padding-left: 40px
 
-    &:before
+    &:after
       position: absolute
-      top: 18px
+      top: 50%
       left: 15px
+      z-index: 10006
       display: block
+      width: 20px
+      height: 20px
+      margin-top: -10px
       font-family: icons
       font-size: 14px
-      line-height: 1
+      line-height: 20px
       color: $c-text-light
+      text-align: left
 
-  &_icon_alert
+  &_icon_alert-circle,
+  &_icon_check-circle
+    padding-left: 60px
+
     &:before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 20px
+      z-index: 10005
+      display: block
+      width: 30px
+      height: 30px
+      margin-top: -15px
+      border-radius: 50%
+      background-color: rgba(0,0,0, .3)
+
+    &:after
+      position: absolute
+      top: 50%
+      left: 20px
+      z-index: 10006
+      display: block
+      display: block
+      width: 30px
+      height: 30px
+      margin-top: -15px
+      font-family: icons
+      font-size: 14px
+      line-height: 30px
+      color: $c-text-light
+      text-align: center
+
+  &_icon_alert,
+  &_icon_alert-circle
+    &:after
       content: "\e911"
+
+  &_icon_check,
+  &_icon_check-circle
+    &:after
+      content: "\e90d"
+      font-size: 18px
+
 
   // $Note MOD: position above
   &_position_above
@@ -68,6 +115,13 @@ $block: ".toss-note"
   // $Note MOD: position below
   &_position_below
     margin-top: 30px
+
+  &_fixed_top
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 10004
 
 
   // $Note text
@@ -78,6 +132,16 @@ $block: ".toss-note"
     font-size: 14px
     font-weight: 400
     color: $c-text-light
+
+
+  // $Note text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Note text light
+  &__text-light
+    font-weight: 300
 
 
   // $Note text line
@@ -92,4 +156,34 @@ $block: ".toss-note"
 
     &:hover
       text-decoration: none
+
+  // $Note action dismiss
+  &__action-dismiss
+    position: absolute
+    width: 30px
+    height: 30px
+    top: 50%
+    right: 10px
+    z-index: 10005
+    display: block
+    margin-top: -15px
+    cursor: pointer
+    opacity: 0.6
+    transition: all .3s
+
+    &:before
+      display: block
+      font-family: icons
+      font-size: 14px
+      line-height: 30px
+      color: $c-text-primary
+      text-align: center
+
+    &:hover
+      opacity: 1
+
+  &__action-dismiss
+    &:before
+      content: "\e909"
+      font-size: 20px
 
