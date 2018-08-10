@@ -117,7 +117,9 @@ $block: ".toss-form"
       margin-bottom: 0
 
       @media screen and (max-width: 960px)
-        margin-right: 0
+        &:not(#{$block}__field_adjust_nowrap)
+          margin-right: 0
+          margin-bottom: 0
 
     // $Common form group MOD: state visible
     &_state_visible
@@ -231,11 +233,23 @@ $block: ".toss-form"
 
       @media screen and (max-width: 960px)
         margin-right: 0
+        margin-bottom: 0
 
     // $Common form row MOD: adjust nowrap
     &_adjust_nowrap
       @media screen and (max-width: 960px)
         flex-direction: row
+
+    // $Common form row MOD: adjust wrap-xs
+    &_adjust_wrap-xs
+      flex-direction: row
+
+      @media screen and (max-width: 960px)
+        flex-direction: row
+
+      @media screen and (max-width: 400px)
+        flex-direction: column
+
 
 
   // $Common form field
@@ -270,10 +284,23 @@ $block: ".toss-form"
           margin-right: 0
           margin-bottom: 30px
 
+        #{$block}__row_adjust_wrap-xs &
+          margin-bottom: 0
+          margin-right: 30px
+
       @media screen and (max-width: 480px)
         margin-right: 25px
 
         &:not(#{$block}__field_adjust_nowrap)
+          margin-right: 0
+          margin-bottom: 25px
+
+        #{$block}__row_adjust_wrap-xs &
+          margin-bottom: 0
+          margin-right: 25px
+
+      @media screen and (max-width: 400px)
+        #{$block}__row_adjust_wrap-xs &
           margin-right: 0
           margin-bottom: 25px
 
@@ -318,6 +345,17 @@ $block: ".toss-form"
       @media screen and (max-width: 960px)
         &:not(#{$block}__field_adjust_nowrap)
           margin-right: 0
+          margin-bottom: 0
+
+        #{$block}__row_adjust_wrap-xs &
+          margin-right: 0
+
+      @media screen and (max-width: 480px)
+        #{$block}__row_adjust_wrap-xs &
+          margin-right: 0
+
+      @media screen and (max-width: 400px)
+        #{$block}__row_adjust_wrap-xs &
           margin-bottom: 0
 
     // $Common form field MOD: justify center

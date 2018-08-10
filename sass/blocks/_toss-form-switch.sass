@@ -2,7 +2,7 @@
 @import '../helpers/mixins'
 
 ////////////////////////////////////////
-// $Common form checkbox
+// $Common form switch
 ////////////////////////////////////////
 
 //////////////////////////////////////// Block variables
@@ -12,19 +12,19 @@
 
 
 //////////////////////////////////////// Block styles
-$block: ".toss-form-checkbox"
+$block: ".toss-form-switch"
 
 #{$block}
   display: inline-block
 
-  // $Common form checkbox MOD: role control
+  // $Common form switch MOD: role control
   &_role_control
 
-  // $Common form checkbox MOD: role control reversed
+  // $Common form switch MOD: role control reversed
   &_role_control-reverse
 
 
-  // $Common form checkbox label
+  // $Common form switch label
   &__label
     display: block
     width: 100%
@@ -42,21 +42,21 @@ $block: ".toss-form-checkbox"
         margin-left: 2px
 
 
-  // $Common form checkbox label text
+  // $Common form switch label text
   &__label-text
 
 
-  // $Common form checkbox label text faded
+  // $Common form switch label text faded
   &__label-text-faded
     color: $c-text-secondary
 
 
-  // $Common form checkbox input
+  // $Common form switch input
   &__input
     display: none
 
 
-  // $Common form checkbox input label
+  // $Common form switch input label
   &__input-label
     display: flex
     flex-direction: column
@@ -64,8 +64,8 @@ $block: ".toss-form-checkbox"
     align-items: flex-start
     cursor: pointer
 
-    // $Common form checkbox input label MOD: adjust field
-    // $Common form checkbox input label MOD: adjust field fluid
+    // $Common form switch input label MOD: adjust field
+    // $Common form switch input label MOD: adjust field fluid
     &_adjust_field,
     &_adjust_field-fluid
       height: 50px
@@ -75,13 +75,13 @@ $block: ".toss-form-checkbox"
         justify-content: flex-start
 
 
-    // $Common form checkbox input label MOD: adjust fluid field
+    // $Common form switch input label MOD: adjust fluid field
     &_adjust_field-fluid
       @media screen and (max-width: 960px)
         height: auto
 
 
-  // $Common form checkbox input label text
+  // $Common form switch input label text
   &__input-label-text
     position: relative
     display: inline-block
@@ -91,7 +91,7 @@ $block: ".toss-form-checkbox"
     color: $c-text-primary
     font-weight: 400
     line-height: 25px
-    padding-left: 35px
+    padding-left: 60px
 
     #{$block}__input:disabled ~ &
       cursor: not-allowed
@@ -102,58 +102,40 @@ $block: ".toss-form-checkbox"
       top: 0
       left: 0
       display: block
-      width: 25px
+      width: 50px
       height: 25px
       background-color: $c-bg-light
       border: 1px solid $c-border-primary
       border-radius: 2px
 
-      #{$block}__input:checked ~ &
-        background-color: $c-accent-green
-        border-color: $c-accent-green
-
-      #{$block}__input:disabled ~ &,
-      #{$block}__input:checked:disabled ~ &,
+      #{$block}__input:disabled ~ &
         background-color: $c-gray-ultra-light
-        border-color: $c-border-primary
 
     &:after
-      content: "\e914"
+      content: ""
       box-sizing: border-box
       position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
+      top: 2px
+      left: 2px
       display: block
-      width: 25px
-      height: 25px
-      padding-left: 2px
-      font-family: icons
-      font-size: 18px
-      line-height: 25px
-      color: $c-text-light
-      text-align: center
-      visibility: hidden
+      width: 23px
+      height: 23px
+      border-radius: 2px
+      background-color: $c-gray-light
+      transition: all .3s
 
       #{$block}__input:checked ~ &
-        visibility: visible
+        background-color: $c-accent-green
+        left: 27px
 
-      #{$block}__input:checked:disabled ~ &
-        color: $c-text-primary
-
-    // $Common form checkbox input label text MOD: no-wrap text
+    // $Common form switch input label text MOD: no-wrap text
     &_type_no-wrap
       white-space: nowrap
 
-    // $Common form checkbox input label text MOD: no-label text
-    &_type_no-label
-      padding-top: 25px
-
-    // $Common form checkbox input label text MOD: type reversed label text
+    // $Common form switch input label text MOD: type reversed label text
     &_type_reversed
       padding-left: 0
-      padding-right: 35px
+      padding-right: 60px
 
       &:before
         left: auto
@@ -161,15 +143,21 @@ $block: ".toss-form-checkbox"
 
       &:after
         left: auto
-        right: 0
-        padding-left: 0
-        padding-right: 2px
+        right: 27px
 
-    // $Common form checkbox input label text MOD: type reversed label text MOD: no-label text
+        #{$block}__input:checked ~ &
+          left: auto
+          right: 2px
+
+    // $Common form switch input label text MOD: no-label text
+    &_type_no-label
+      padding-left: 50px
+
+    // $Common form switch input label text MOD: type reversed label text MOD: no-label text
     &_type_reversed#{&}_type_no-label
       padding-left: 0
-      padding-right: 35px
+      padding-right: 50px
 
-    // $Common form checkbox input label text MOD: small text
+    // $Common form switch input label text MOD: small text
     &_size_small
       font-size: 12px
