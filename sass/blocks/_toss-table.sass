@@ -23,7 +23,8 @@ $block: ".toss-table"
   &_type_common
     display: table
 
-  &_page_offers-index-panel
+  &_page_offers-index-panel,
+  &_page_prizes-index-panel
     border: none
 
 
@@ -50,11 +51,13 @@ $block: ".toss-table"
     #{$block}_type_common &
       display: table-row
 
-    #{$block}_page_offers-index-panel &
+    #{$block}_page_offers-index-panel &,
+    #{$block}_page_prizes-index-panel &
       background-color: transparent
 
     @media screen and (max-width: 1120px)
-      #{$block}_page_offers-index-panel &
+      #{$block}_page_offers-index-panel &,
+      #{$block}_page_prizes-index-panel &
         flex-wrap: wrap
 
     &:nth-child(odd)
@@ -128,8 +131,12 @@ $block: ".toss-table"
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
 
-      #{$block}_page_offers-index-panel &
+      #{$block}_page_offers-index-panel &,
+      #{$block}_page_prizes-index-panel &
         border-right: none
+
+    #{$block}_page_prizes-index-panel &
+      align-items: center
 
     // $Common table cell first column
     &:nth-child(1)
@@ -138,17 +145,32 @@ $block: ".toss-table"
         justify-content: flex-start
         padding-left: 20px
 
+      #{$block}_page_prizes-index-panel &
+        width: 25%
+        padding-left: 20px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 50%
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_prizes-index-panel &
+          width: 33.3%
 
       @media screen and (max-width: 800px)
         #{$block}_page_offers-index-panel &
           width: 100%
           padding-right: 20px
 
+      @media screen and (max-width: 640px)
+        #{$block}_page_prizes-index-panel &
+          width: 100%
+          padding-right: 20px
+          border-bottom: 1px solid $c-border-secondary
+
       @media screen and (max-width: 480px)
-        #{$block}_page_offers-index-panel &
+        #{$block}_page_offers-index-panel &,
+        #{$block}_page_prizes-index-panel &
           padding-left: 15px
           padding-right: 15px
 
@@ -158,10 +180,17 @@ $block: ".toss-table"
         width: 50%
         justify-content: flex-start
 
+      #{$block}_page_prizes-index-panel &
+        width: 25%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 50%
           padding-right: 20px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_prizes-index-panel &
+          width: 33.3%
 
       @media screen and (max-width: 800px)
         #{$block}_page_offers-index-panel &
@@ -169,10 +198,18 @@ $block: ".toss-table"
           padding-left: 20px
           border-top: 1px solid $c-border-primary
 
+      @media screen and (max-width: 640px)
+        #{$block}_page_prizes-index-panel &
+          width: 50%
+          padding-left: 20px
+
       @media screen and (max-width: 480px)
         #{$block}_page_offers-index-panel &
           padding-left: 15px
           padding-right: 15px
+
+        #{$block}_page_prizes-index-panel &
+          padding-left: 15px
 
     // $Common table cell third column
     &:nth-child(3)
@@ -180,16 +217,50 @@ $block: ".toss-table"
         width: 25%
         padding-right: 20px
 
+      #{$block}_page_prizes-index-panel &
+        width: 25%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 100%
           padding-left: 20px
           border-top: 1px solid $c-border-primary
 
+      @media screen and (max-width: 960px)
+        #{$block}_page_prizes-index-panel &
+          width: 33.3%
+          padding-right: 20px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_prizes-index-panel &
+          width: 50%
+          padding-right: 20px
+
       @media screen and (max-width: 480px)
         #{$block}_page_offers-index-panel &
           padding-left: 15px
           padding-right: 15px
+
+        #{$block}_page_prizes-index-panel &
+          padding-right: 15px
+
+    // $Common table cell fourth column
+    &:nth-child(4)
+      #{$block}_page_prizes-index-panel &
+        width: 25%
+        padding-right: 20px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_prizes-index-panel &
+          width: 100%
+          padding-left: 20px
+          border-top: 1px solid $c-border-secondary
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_prizes-index-panel &
+          padding-left: 15px
+          padding-right: 15px
+
 
     // $Common table cell MOD: role header
     // $Common table cell MOD: role footer
@@ -218,6 +289,30 @@ $block: ".toss-table"
     font-weight: 400
     color: $c-text-primary
 
+    #{$block}_page_prizes-index-panel &
+      text-align: center
+
+    &:before
+      display: inline-block
+      font-family: 'icons'
+      font-size: 14px
+      line-height: 14px
+      margin-right: 5px
+      color: inherit
+      vertical-align: baseline
+
+    &_icon_date
+      &:before
+        content: '\e900'
+
+    &_icon_user
+      &:before
+        content: '\e904'
+
+    &_icon_venue
+      &:before
+        content: '\e901'
+
     // $Common table text MOD: adjust no wrap
     &_adjust_no-wrap
       white-space: nowrap
@@ -228,6 +323,9 @@ $block: ".toss-table"
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
+
+  &__text-nowrap
+    white-space: nowrap
 
   &__text-bold
     font-weight: 600
@@ -247,16 +345,21 @@ $block: ".toss-table"
     color: $c-text-secondary
     font-size: 12px
 
+  &__text-number
+    font-size: 18px
+    font-weight: 600
+
 
   // $Common table actions
   &__actions
-    text-align: center
-
     #{$block}_page_offers-index-panel &
       display: flex
       flex-direction: row
       justify-content: center
       align-items: flex-start
+
+    #{$block}_page_prizes-index-panel &
+      text-align: center
 
 
   // $Common table action
