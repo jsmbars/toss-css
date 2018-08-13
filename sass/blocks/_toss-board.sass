@@ -19,6 +19,13 @@ $block: ".toss-board"
   width: 100%
   background-color: $c-bg-light
 
+  &:not(:last-child)
+    margin-bottom: 30px
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
+
   // $Board inner
   &__inner
     display: block
@@ -27,6 +34,69 @@ $block: ".toss-board"
 
     @media screen and (max-width: 480px)
       padding: 25px 15px
+
+
+  // $Board header
+  &__header
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 20px
+    border-bottom: 1px solid $c-border-primary
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
+
+  // $Board content
+  &__content
+    display: block
+    width: 100%
+
+
+  // $Board content inner
+  &__content-inner
+    display: block
+    width: 100%
+    padding: 20px 20px 30px
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
+
+  // $Board title
+  &__title
+    font-family: $f-sans
+    font-size: 20px
+    line-height: 1
+    font-weight: 600
+    color: $c-text-primary
+
+    @media screen and (max-width: 640px)
+      font-size: 18px
+
+    &:before
+      font-size: 18px
+      line-height: 18px
+      margin-right: 10px
+
+
+  // $Board title faded
+  &__title-faded
+    color: $c-text-secondary
+
+
+  // $Board title regular
+  &__title-regular
+    font-weight: 400
+
+
+  // $Board title light
+  &__title-light
+    font-weight: 300
 
 
   // $Board actions

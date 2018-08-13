@@ -58,7 +58,17 @@ $block: ".toss-panel"
   &_highlight_gray
     background-color: $c-gray-ultra-light
 
+  &_role_manager
+    box-shadow: none
+    border: 1px solid $c-border-secondary
+
   &_page_offers-index
+
+  &_page_prizes-index
+
+  &_page_prizes-details-tc
+
+  &_page_prizes-details-assignment
 
 
   // $Panel header
@@ -66,11 +76,14 @@ $block: ".toss-panel"
     position: relative
     display: flex
     flex-direction: row
-    justify-content: space-between
+    justify-content: flex-start
     align-items: center
     width: 100%
     padding: 20px
     border-bottom: 1px solid $c-border-primary
+
+    #{$block}_role_manager &
+      border-color: $c-border-secondary
 
     @media screen and (max-width: 480px)
       padding: 20px 15px
@@ -88,6 +101,10 @@ $block: ".toss-panel"
 
       @media screen and (max-width: 480px)
         padding-right: 30px
+
+    // $Panel header MOD: marked
+    &_marked
+      background-color: $c-gray-ultra-light
 
 
   // $Panel header group
@@ -107,6 +124,9 @@ $block: ".toss-panel"
     flex-grow: 1
     flex-shrink: 1
     display: block
+
+    #{$block}_page_prizes-details-assignment &
+      padding-right: 20px
 
 
   // $Panel header meta
@@ -162,13 +182,41 @@ $block: ".toss-panel"
 
   // $Panel dropdown
   &__dropdown
+    display: block
+    width: 100%
 
     &_state_closed
       display: none
 
+  // $Panel content
+  &__content
+    display: block
+    width: 100%
+
+  // $Panel content inner
+  &__content-inner
+    display: block
+    width: 100%
+    padding: 20px 20px 30px
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
 
   // $Panel group
   &__group
+    display: block
+    width: 100%
+
+
+  // $Panel group content
+  &__group-content
+    display: block
+    width: 100%
+    padding: 15px 20px
+
+    @media screen and (max-width: 960px)
+      padding: 15px
 
   // $Panel row
   &__row
@@ -258,6 +306,26 @@ $block: ".toss-panel"
       margin-bottom: 10px
 
 
+  // $Panel actions
+  &__actions
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+    // $Panel actions MOD: position above
+    &_position_above
+      margin-bottom: 30px
+
+    // $Panel actions MOD: position below
+    &_position_below
+      margin-top: 30px
+
+
+  // $BPanel action
+  &__action
+
+
   &__title,
   &__text
     max-width: 100%
@@ -279,11 +347,18 @@ $block: ".toss-panel"
       &:before
         content: '\e901'
 
+    &:not(:last-child)
+      margin-bottom: 5px
+
     &_adjust_wrap
       overflow-wrap: break-word
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
+
+    &_space_l
+      &:not(:last-child)
+        margin-bottom: 20px
 
 
   // $Panel title
@@ -295,6 +370,8 @@ $block: ".toss-panel"
     color: $c-text-primary
 
     @media screen and (max-width: 640px)
+      font-size: 18px
+
       #{$block}_page_prizes-index &
         text-align: center
 
@@ -320,9 +397,10 @@ $block: ".toss-panel"
 
 
   &__text
+    display: block
     font-family: $f-sans
     font-size: 14px
-    line-height: 1
+    line-height: 1.2
     font-weight: 400
     color: $c-text-primary
 
