@@ -38,7 +38,9 @@ $block: ".toss-modal"
   &_state_hidden
     display: none
 
-  &_role_service,
+  &_role_service
+    max-width: 800px
+
   &_role_action
     max-width: 800px
 
@@ -87,6 +89,9 @@ $block: ".toss-modal"
       right: 10px
       transform: translate(0, 0)
 
+    &_type_light
+      color: $c-text-light
+
 
   // $Modal window header
   // $Modal window footer
@@ -95,7 +100,6 @@ $block: ".toss-modal"
     position: relative
     width: 100%
     padding: 30px 20px
-    border-radius: 10px
     background-color: $c-bg-secondary
 
     @media screen and (max-width: 480px)
@@ -107,19 +111,46 @@ $block: ".toss-modal"
 
   // $Modal window header
   &__header
+    border-top-right-radius: 10px
+    border-top-left-radius: 10px
 
-    #{$block}_role_service &
+    #{$block}_role_service &,
+    #{$block}_role_notification &
       text-align: center
 
     #{$block}_role_action &,
     #{$block}_role_info &
       padding-right: 50px
 
+    &_color_accent-red
+      background-color: $c-accent-red
+
+    &_color_accent-green
+      background-color: $c-accent-green
+
+    &_color_accent-blue
+      background-color: $c-accent-blue
+
+    &_color_accent-yellow
+      background-color: $c-accent-yellow
+
+    &_color_accent-purple
+      background-color: $c-accent-purple
+
+    &_color_accent-pink
+      background-color: $c-accent-pink
+
 
   &__header-group
 
     &:not(:last-child)
       margin-bottom: 20px
+
+
+  // $Modal window footer
+  &__footer
+    border-bottom-right-radius: 10px
+    border-bottom-left-radius: 10px
 
 
   // $Modal window content
@@ -130,6 +161,9 @@ $block: ".toss-modal"
 
     @media screen and (max-width: 480px)
       padding: 25px 15px
+
+    &_justify_center
+      text-align: center
 
 
   // $Modal window content group
@@ -173,12 +207,19 @@ $block: ".toss-modal"
     color: $c-text-primary
 
     #{$block}_role_service &
-      text-align: center
       font-size: 30px
       font-weight: 600
 
     &:not(:last-child)
       margin-bottom: 20px
+
+    #{$block}__header_color_accent-red &,
+    #{$block}__header_color_accent-green &,
+    #{$block}__header_color_accent-blue &,
+    #{$block}__header_color_accent-yellow &,
+    #{$block}__header_color_accent-purple &,
+    #{$block}__header_color_accent-pink &
+      color: $c-text-light
 
 
   &__title-bold
