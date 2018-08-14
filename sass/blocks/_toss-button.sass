@@ -17,7 +17,7 @@
 
 =button-common-hover($background-color, $amount: 5%)
 
-  &:not(.stock-button_type_no-behavior):hover
+  &:not(.toss-button_type_no-behavior):hover
     background-color: lighten($background-color, $amount)
 
 
@@ -30,7 +30,7 @@
 
 =button-bordered-hover($color:$c-text-light, $border-color:$c-gray-dark, $bg-color: $c-gray-dark)
 
-  &:not(.stock-button_type_no-behavior):hover
+  &:not(.toss-button_type_no-behavior):hover
     color: $color
     border-color: $border-color
     background-color: $bg-color
@@ -44,7 +44,7 @@
     background-color: $bg-color
 
 
-=button-with-icon-left($icon: '', $icon-color: $c-text-light, $icon-hover-color: null, $icon-active-color: null, $size: 18px)
+=button-with-icon-left($icon: '', $icon-color: inherit, $icon-hover-color: inherit, $icon-active-color: inherit, $size: 18px)
 
   &:before
     content: '#{$icon}'
@@ -57,18 +57,16 @@
     font-weight: normal
     vertical-align: middle
 
-  @if $icon-hover-color != null
-    &:hover
-      &:before
-        color: $icon-hover-color
+  &:hover
+    &:before
+      color: $icon-hover-color
 
-  @if $icon-active-color != null
-    &#{$block}_state_active
-      &:before
-        color: $icon-active-color
+  &#{$block}_state_active
+    &:before
+      color: $icon-active-color
 
 
-=button-with-icon-right($icon: '', $icon-color: $c-text-light, $icon-hover-color: null, $icon-active-color: null, $size: 18px)
+=button-with-icon-right($icon: '', $icon-color: inherit, $icon-hover-color: inherit, $icon-active-color: inherit, $size: 18px)
 
   &:after
     content: '#{$icon}'
@@ -81,15 +79,13 @@
     font-weight: normal
     vertical-align: middle
 
-  @if $icon-hover-color != null
-    &:hover
-      &:after
-        color: $icon-hover-color
+  &:hover
+    &:after
+      color: $icon-hover-color
 
-  @if $icon-active-color != null
-    &#{$block}_state_active
-      &:after
-        color: $icon-active-color
+  &#{$block}_state_active
+    &:after
+      color: $icon-active-color
 
 
 //////////////////////////////////////// Block styles
@@ -256,32 +252,29 @@ $block: ".toss-button"
   &_icon_plus
     +button-with-icon-left($icon: '\e90a')
 
-  &_icon_plus#{&}_border_accent-blue
-    +button-with-icon-left($icon: '\e90a', $icon-color: $c-accent-blue, $icon-hover-color: $c-text-light, $icon-active-color: $c-text-light)
-
   // $Common button MOD: icon check
   &_icon_check
     +button-with-icon-left($icon: '\e90d')
-
-  &_icon_check#{&}_border_accent-green
-    +button-with-icon-left($icon: '\e90d', $icon-color: $c-accent-green, $icon-hover-color: $c-text-light, $icon-active-color: $c-text-light)
 
   // $Common button MOD: icon close
   &_icon_close
     +button-with-icon-left($icon: '\e909')
 
-  &_icon_close#{&}_border_accent-red
-    +button-with-icon-left($icon: '\e909', $icon-color: $c-accent-red, $icon-hover-color: $c-text-light, $icon-active-color: $c-text-light)
-
   // $Common button MOD: icon pencil
   &_icon_pencil
     +button-with-icon-left($icon: '\e91d', $size: 14px)
 
-  &_icon_pencil#{&}_border_accent-green
-    +button-with-icon-left($icon: '\e91d', $icon-color: $c-accent-green, $icon-hover-color: $c-text-light, $icon-active-color: $c-text-light, $size: 14px)
+  // $Common button MOD: icon zoom-minus
+  &_icon_zoom-minus
+    +button-with-icon-left($icon: '\e920', $size: 14px)
 
-  &_icon_pencil#{&}_border_accent-blue
-    +button-with-icon-left($icon: '\e91d', $icon-color: $c-accent-blue, $icon-hover-color: $c-text-light, $icon-active-color: $c-text-light, $size: 14px)
+  // $Common button MOD: icon zoom-plus
+  &_icon_zoom-plus
+    +button-with-icon-left($icon: '\e921', $size: 14px)
+
+  // $Common button MOD: icon copy
+  &_icon_copy
+    +button-with-icon-left($icon: '\e92c', $size: 16px)
 
 
   // Specific buttons

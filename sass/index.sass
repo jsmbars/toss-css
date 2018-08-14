@@ -15,18 +15,17 @@
 //  $Base...............................Some general styles
 //
 // BLOCKS...............................Page components
+// Layout blocks
 // $Body................................
 // $Page header.........................
-// $Menu................................
 // $Quick access........................
-// $Alias...............................
 // $Page main...........................
 // $Board...............................
 // $Panel...............................
-// $Common button.......................
-// $Common label........................
-// $Common note.........................
 // $Common form.........................
+// $History.............................
+// $Overview............................
+// Content blocks
 // $Common form error message...........
 // $Common form field...................
 // $Common form textarea................
@@ -34,9 +33,19 @@
 // $Common form interval................
 // $Common form checkbox................
 // $Common form options.................
-// $Common table........................
+// $Common form switch..................
+// $Corner..............................
+// $Indicator...........................
+// $Alias...............................
+// $Number..............................
+// $Common button.......................
+// $Common label........................
+// $Note................................
+// $Menu................................
 // $Pagination..........................
 // $Activity............................
+// $Summary.............................
+// $Common table........................
 // $Modal window........................
 // $Error...............................
 
@@ -73,29 +82,17 @@
 /// $BLOCKS
 ////////////////////////////////////////
 
-// $Body
-@import './blocks/toss-body'
+// $Corner
+@import './blocks/toss-corner'
 
-// $Page header
-@import './blocks/toss-page-header'
-
-// $Menu
-@import './blocks/toss-menu'
-
-// $Quick access
-@import './blocks/toss-quick-access'
+// $Indicator
+@import './blocks/toss-indicator'
 
 // $Alias
 @import './blocks/toss-alias'
 
-// $Page main
-@import './blocks/toss-page-main'
-
-// $Board
-@import './blocks/toss-board'
-
-// $Panel
-@import './blocks/toss-panel'
+// $Number
+@import './blocks/toss-number'
 
 // $Common button
 @import './blocks/toss-button'
@@ -103,11 +100,8 @@
 // $Common label
 @import './blocks/toss-label'
 
-// $Common note
+// $Note
 @import './blocks/toss-note'
-
-// $Common form
-@import './blocks/toss-form'
 
 // $Common form error message
 @import './blocks/toss-form-error'
@@ -130,8 +124,39 @@
 // $Common form options
 @import './blocks/toss-form-options'
 
-// $Common table
-@import './blocks/toss-table'
+// $Common form switch
+@import './blocks/toss-form-switch'
+
+// $Body
+@import './blocks/toss-body'
+
+// $Page header
+@import './blocks/toss-page-header'
+
+// $Quick access
+@import './blocks/toss-quick-access'
+
+// $Page main
+@import './blocks/toss-page-main'
+
+// $Board
+@import './blocks/toss-board'
+
+// $Panel
+@import './blocks/toss-panel'
+
+// $Common form
+@import './blocks/toss-form'
+
+// $History
+@import './blocks/toss-history'
+
+// $Overview
+@import './blocks/toss-overview'
+
+
+// $Menu
+@import './blocks/toss-menu'
 
 // $Pagination
 @import './blocks/toss-pagination'
@@ -139,11 +164,17 @@
 // $Activity
 @import './blocks/toss-activity'
 
-// $Number
-@import './blocks/toss-number'
+// $Summary
+@import './blocks/toss-summary'
+
+// $Common table
+@import './blocks/toss-table'
 
 // $Modal window
 @import './blocks/toss-modal'
 
 // $Error
 @import './blocks/toss-error'
+
+
+// Restyled existing vendor modules

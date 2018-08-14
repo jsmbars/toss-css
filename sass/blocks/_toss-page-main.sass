@@ -19,6 +19,12 @@ $block: ".toss-page-main"
   width: 100%
   padding-bottom: 30px
 
+  &_page_offers-index
+
+  &_page_prizes-index
+
+  &_page_prizes-details
+
 
   // $Page main dashboard
   // $Page main filter
@@ -88,9 +94,22 @@ $block: ".toss-page-main"
     align-items: flex-start
     justify-content: flex-start
 
+    @media screen and (max-width: 640px)
+      flex-direction: column
+      align-items: center
+
     &:not(:last-child)
       @media screen and (max-width: 960px)
         margin-bottom: 20px
+
+  &__info-group-action
+
+    &:not(:last-child)
+      margin-right: 15px
+
+      @media screen and (max-width: 640px)
+        margin-right: 0
+        margin-bottom: 15px
 
 
   // $Page main title
@@ -110,8 +129,20 @@ $block: ".toss-page-main"
       @media screen and (max-width: 960px)
         margin-bottom: 20px
 
-    & > b
-      font-weight: 600
+
+  // $Page main title bold
+  &__title-bold
+    font-weight: 600
+
+
+  // $Page main title light
+  &__title-light
+    font-weight: 300
+
+
+  // $Page main title faded
+  &__title-faded
+    color: $c-text-secondary
 
 
   // $Page dashboard title info

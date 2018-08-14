@@ -112,6 +112,11 @@ $block: ".toss-form-field"
   &__label-text
 
 
+  // $Common form field label text faded
+  &__label-text-faded
+    color: $c-text-secondary
+
+
   // $Common form field tags
   &__tags
     display: block
@@ -123,8 +128,9 @@ $block: ".toss-form-field"
     position: relative
 
     &:before
-      #{$block}_role_search &
-        content: "\e90e"
+      #{$block}_role_search &,
+      #{$block}_role_date &
+        content: ""
         position: absolute
         top: 50%
         left: 10px
@@ -135,7 +141,14 @@ $block: ".toss-form-field"
         color: $c-text-secondary
         transform: translateY(-50%)
 
-      #{$block}_role_search#{$block}_state_error &
+      #{$block}_role_search &
+        content: "\e90e"
+
+      #{$block}_role_date &
+        content: "\e900"
+
+      #{$block}_role_search#{$block}_state_error &,
+      #{$block}_role_date#{$block}_state_error &
         color: $c-accent-red
 
     // $Common form field input CONTEXT: $Common form MOD: role control
@@ -148,7 +161,7 @@ $block: ".toss-form-field"
       display: block
       width: 100%
       min-height: 50px
-      padding: 15px 10px
+      padding: 13px 10px
       font-family: $f-sans
       font-size: 14px
       color: $c-text-primary
@@ -162,7 +175,8 @@ $block: ".toss-form-field"
         min-height: 40px
         padding: 10px
 
-      #{$block}_role_search &
+      #{$block}_role_search &,
+      #{$block}_role_date &
         padding-left: 35px
 
       #{$block}_state_error &
