@@ -37,7 +37,7 @@ $block: ".toss-form-interval"
   &__label
     display: block
     width: 100%
-    margin-bottom: 15px
+    margin-bottom: 10px
     font-family: $f-sans
     font-size: 14px
     color: $c-text-primary
@@ -78,10 +78,15 @@ $block: ".toss-form-interval"
 
   // $Common form interval range
   &__range
+    position: relative
     display: flex
     flex-direction: row
     justify-content: flex-start
     align-items: flex-end
+
+    // $Common form interval range MOD: adjust clear action
+    &_adjust_clear
+      padding-right: 22px
 
 
   // $Common form interval item
@@ -110,3 +115,34 @@ $block: ".toss-form-interval"
       height: 0
       border: 1px solid $c-gray-light
       transform: translate(-50%, -50%)
+
+
+  // $Common form interval clear
+  &__clear
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-end
+    width: 22px
+    font-size: 0
+    line-height: 0
+    color: transparent
+    background-color: transparent
+    border: none
+    cursor: pointer
+    opacity: .5
+    transition: all .3s
+
+    &:before
+      content: '\e91e'
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      color: $c-text-primary
+
+    &:hover
+      opacity: 1

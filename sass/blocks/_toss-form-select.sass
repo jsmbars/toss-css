@@ -118,6 +118,10 @@ $block: ".toss-form-select"
   &__control
     position: relative
 
+    // $Common form select control MOD: adjust clear action
+    &_adjust_clear
+      padding-right: 22px
+
     // $Common form select input CONTEXT: $Common form select MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
@@ -209,6 +213,37 @@ $block: ".toss-form-select"
     color: $c-text-primary
 
 
+  // $Common form select clear
+  &__clear
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-end
+    width: 22px
+    font-size: 0
+    line-height: 0
+    color: transparent
+    background-color: transparent
+    border: none
+    cursor: pointer
+    opacity: .5
+    transition: all .3s
+
+    &:before
+      content: '\e91e'
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      color: $c-text-primary
+
+    &:hover
+      opacity: 1
+
+
   // React-select adjusments
   & .Select-color-indicator
     display: inline-block
@@ -293,29 +328,58 @@ $block: ".toss-form-select"
     white-space: nowrap
     direction: rtl
     vertical-align: middle
+    color: $c-text-primary
 
-    &_priority_high
+    &_color_accent-red,
+    &_color_accent-yellow,
+    &_color_accent-green,
+    &_color_accent-blue,
+    &_color_accent-purple,
+    &_color_accent-pink,
+    &_color_gray-medium
+      color: $c-text-light
+
+    &_color_accent-red
       background-color: $c-accent-red
 
-    &_priority_medium
+    &_color_accent-yellow
       background-color: $c-accent-yellow
 
-    &_priority_low
+    &_color_accent-green
       background-color: $c-accent-green
 
-    &_status_accepted,
-    &_status_completed
-      background-color: $c-accent-green
+    &_color_accent-blue
+      background-color: $c-accent-blue
 
-    &_status_rejected,
-    &_status_deleted
-      background-color: $c-accent-red
+    &_color_accent-purple
+      background-color: $c-accent-purple
 
-    &_status_waiting
-      background-color: $c-accent-yellow
+    &_color_accent-pink
+      background-color: $c-accent-pink
 
-    &_status_pending
+    &_color_gray
       background-color: $c-gray-medium
+
+    &_color_accent-red-medium
+      background-color: $c-accent-red-medium
+
+    &_color_accent-yellow-medium
+      background-color: $c-accent-yellow-medium
+
+    &_color_accent-green-medium
+      background-color: $c-accent-green-medium
+
+    &_color_accent-blue-medium
+      background-color: $c-accent-blue-medium
+
+    &_color_accent-purple-medium
+      background-color: $c-accent-purple-medium
+
+    &_color_accent-pink-medium
+      background-color: $c-accent-pink-medium
+
+    &_color_gray-light
+      background-color: $c-gray-extra-light
 
   & .Select--multi .Select-value-icon
     position: relative
@@ -354,7 +418,7 @@ $block: ".toss-form-select"
     background-color: transparent
     white-space: nowrap
     text-transform: uppercase
-    color: $c-text-primary
+    color: inherit
     border: none
     padding: 3px 10px
     direction: ltr

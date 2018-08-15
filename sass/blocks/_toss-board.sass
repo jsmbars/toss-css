@@ -51,6 +51,12 @@ $block: ".toss-board"
       padding: 20px 15px
 
 
+  // $Board header toggle
+  &__header-toggle
+    flex-grow: 0
+    flex-shrink: 0
+
+
   // $Board content
   &__content
     display: block
@@ -131,6 +137,43 @@ $block: ".toss-board"
 
   // $Board action
   &__action
+
+  // $Board toggle
+  &__toggle
+    display: inline-block
+    font-size: 0
+    line-height: 0
+    color: transparent
+    vertical-align: middle
+    outline: none
+    text-decoration: none
+    white-space: nowrap
+    cursor: pointer
+    transition: all .3s
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: 'icons'
+      font-size: 0
+      line-height: 18px
+      color: $c-gray-medium
+      vertical-align: middle
+      transition: all .3s
+
+    &:hover
+      &:before
+        color: $c-gray-dark
+
+    // $Board toggle MOD: role dropdown
+    &_role_dropdown
+      &:before
+        content: '\e91a'
+        font-size: 30px
+
+    &_role_dropdown#{&}_state_closed
+      &:before
+        content: '\e919'
 
 
   // $Board text placeholder

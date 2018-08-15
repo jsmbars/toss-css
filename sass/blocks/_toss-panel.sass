@@ -70,6 +70,10 @@ $block: ".toss-panel"
 
   &_page_prizes-details-assignment
 
+  &_page_user-offers-assigned
+
+  &_page_user-offers-redeemed
+
 
   // $Panel header
   &__header
@@ -174,8 +178,8 @@ $block: ".toss-panel"
     flex-shrink: 0
 
 
-  // $Panel header switch
-  &__header-switch
+  // $Panel header toggle
+  &__header-toggle
     flex-grow: 0
     flex-shrink: 0
 
@@ -231,7 +235,7 @@ $block: ".toss-panel"
 
     // $Panel row MOD: marked
     &_type_marked
-      background-color: $c-gray-extra-light
+      background-color: $c-gray-hyper-light
 
       #{$block}_highlight_blue &,
       #{$block}_highlight_red &,
@@ -307,6 +311,43 @@ $block: ".toss-panel"
       margin-bottom: 10px
 
 
+  // $panel info list
+  &__info-list
+    display: block
+    width: 100%
+    padding: 10px 0
+
+
+  // $panel info item
+  &__info-item
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: stretch
+
+
+  // $panel info key
+  // $panel info value
+  &__info-key,
+  &__info-value
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 50%
+    padding: 10px 15px
+
+  &__info-key
+    align-items: flex-end
+    text-align: right
+
+  &__info-value
+    align-items: flex-start
+    text-align: left
+
+
   // $Panel actions
   &__actions
     display: flex
@@ -323,7 +364,7 @@ $block: ".toss-panel"
       margin-top: 30px
 
 
-  // $BPanel action
+  // $Panel action
   &__action
 
 
@@ -348,6 +389,14 @@ $block: ".toss-panel"
       &:before
         content: '\e901'
 
+    &_icon_drink
+      &:before
+        content: '\e925'
+
+    &_icon_food
+      &:before
+        content: '\e926'
+
     &:not(:last-child)
       margin-bottom: 5px
 
@@ -356,6 +405,9 @@ $block: ".toss-panel"
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
+
+    &_adjust_action
+      cursor: pointer
 
     &_space_l
       &:not(:last-child)
@@ -369,6 +421,10 @@ $block: ".toss-panel"
     line-height: 1.2
     font-weight: 600
     color: $c-text-primary
+
+    #{$block}_page_user-offers-assigned &,
+    #{$block}_page_user-offers-redeemed &
+      text-align: center
 
     @media screen and (max-width: 640px)
       font-size: 18px
@@ -438,6 +494,26 @@ $block: ".toss-panel"
   // $Panel text light
   &__text-light
     font-weight: 300
+
+
+  // $Panel link
+  &__link
+    display: inline-block
+    max-width: 100%
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: $c-accent-blue
+    vertical-align: middle
+    text-decoration: none
+    transition: color .3s
+    cursor: pointer
+
+    &:hover,
+    &:focus
+      outline: none
+      text-decoration: underline
+      color: $c-accent-blue
 
   // $Panel toggle
   &__toggle
