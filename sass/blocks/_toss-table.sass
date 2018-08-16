@@ -354,9 +354,7 @@ $block: ".toss-table"
       text-align: center
 
     #{$block}_page_user-offers-assigned #{$block}__cell:nth-child(2) &,
-    #{$block}_page_user-offers-redeemed #{$block}__cell:nth-child(2) &,
-    #{$block}_page_user-offers-assigned #{$block}__cell:nth-child(6) &,
-    #{$block}_page_user-offers-redeemed #{$block}__cell:nth-child(7) &
+    #{$block}_page_user-offers-redeemed #{$block}__cell:nth-child(2) &
       text-align: left
 
     &:before
@@ -433,6 +431,18 @@ $block: ".toss-table"
   &__action
     #{$block}_page_offers-index-panel &:nth-child(1)
       margin-right: 10px
+
+
+  // $Common table labels
+  &__labels
+
+    #{$block}_page_user-offers-assigned #{$block}__cell:nth-child(6) &,
+    #{$block}_page_user-offers-redeemed #{$block}__cell:nth-child(7) &
+      text-align: left
+
+
+  // $Common table label
+  &__label
 
 
   // $Common table link
