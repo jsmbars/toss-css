@@ -49,7 +49,36 @@ $block: ".toss-table"
     background-color: $c-bg-light
 
     &:nth-child(odd)
-      background-color: $c-bg-secondary
+      #{$block}_type_common &
+        background-color: $c-bg-secondary
+
+    // $Common table group MOD: highlight blue
+    &_highlight_accent-blue
+      background-color: $c-accent-blue-light
+
+    // $Common table group MOD: highlight red
+    &_highlight_accent-red
+      background-color: $c-accent-red-light
+
+    // $Common table group MOD: highlight yellow
+    &_highlight_accent-yellow
+      background-color: $c-accent-yellow-light
+
+    // $Common table group MOD: highlight green
+    &_highlight_accent-green
+      background-color: $c-accent-green-light
+
+    // $Common table group MOD: highlight purple
+    &_highlight_accent-purple
+      background-color: $c-accent-purple-light
+
+    // $Common table group MOD: highlight pink
+    &_highlight_accent-pink
+      background-color: $c-accent-pink-light
+
+    // $Common table group MOD: highlight gray
+    &_highlight_gray
+      background-color: $c-gray-ultra-light
 
 
   // $Common table row
@@ -105,17 +134,33 @@ $block: ".toss-table"
     &_no-border:not(:last-child)
       border: none
 
-    // $Common table row MOD: state success
-    &_state_success,
-    &_state_success:nth-child(odd),
-    &_state_success:nth-child(even),
-      background-color: lighten($c-accent-green, 40)
+    // $Common table row MOD: highlight blue
+    &_highlight_accent-blue
+      background-color: $c-accent-blue-light
 
-    // $Common table row MOD: state alert
-    &_state_alert,
-    &_state_alert:nth-child(odd),
-    &_state_alert:nth-child(even)
-      background-color: lighten($c-accent-red, 20)
+    // $Common table row MOD: highlight red
+    &_highlight_accent-red
+      background-color: $c-accent-red-light
+
+    // $Common table row MOD: highlight yellow
+    &_highlight_accent-yellow
+      background-color: $c-accent-yellow-light
+
+    // $Common table row MOD: highlight green
+    &_highlight_accent-green
+      background-color: $c-accent-green-light
+
+    // $Common table row MOD: highlight purple
+    &_highlight_accent-purple
+      background-color: $c-accent-purple-light
+
+    // $Common table row MOD: highlight pink
+    &_highlight_accent-pink
+      background-color: $c-accent-pink-light
+
+    // $Common table row MOD: highlight gray
+    &_highlight_gray
+      background-color: $c-gray-ultra-light
 
 
   // $Common table cell

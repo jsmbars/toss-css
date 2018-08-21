@@ -49,22 +49,23 @@ $block: ".toss-form"
     &_size_third,
     &_size_fourth,
     &_size_max,
-    &_size_min,
-    &_size_max-fluid,
-    &_size_min-fluid
+    &_size_min
       margin-right: 30px
       margin-bottom: 0
 
       @media screen and (max-width: 960px)
 
-        &:not(#{$block}__field_adjust_nowrap)
+        &:not(#{$block}__group_adjust_nowrap)
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
           margin-right: 0
           margin-bottom: 30px
 
       @media screen and (max-width: 480px)
         margin-right: 25px
 
-        &:not(#{$block}__field_adjust_nowrap)
+        &:not(#{$block}__group_adjust_nowrap)
           margin-right: 0
           margin-bottom: 25px
 
@@ -73,27 +74,15 @@ $block: ".toss-form"
       flex-shrink: 1
       width: 50%
 
-      @media screen and (max-width: 960px)
-        flex-grow: 1
-        width: 100%
-
     &_size_third
       flex-grow: 0
       flex-shrink: 1
       width: 33%
 
-      @media screen and (max-width: 960px)
-        flex-grow: 1
-        width: 100%
-
     &_size_fourth
       flex-grow: 0
       flex-shrink: 1
       width: 25%
-
-      @media screen and (max-width: 960px)
-        flex-grow: 1
-        width: 100%
 
     &_size_max
       flex-grow: 1
@@ -105,30 +94,13 @@ $block: ".toss-form"
       flex-shrink: 1
       width: auto
 
-    &_size_max-fluid
-      flex-grow: 1
-      flex-shrink: 1
-      width: auto
-
-      @media screen and (max-width: 960px)
-        width: 100%
-
-    &_size_min-fluid
-      flex-grow: 0
-      flex-shrink: 1
-      width: auto
-
-      @media screen and (max-width: 960px)
-        flex-grow: 1
-        width: 100%
-
     // $Common form group MOD: position last
     &_position_last
       margin-right: 0
       margin-bottom: 0
 
       @media screen and (max-width: 960px)
-        &:not(#{$block}__field_adjust_nowrap)
+        &:not(#{$block}__group_adjust_nowrap)
           margin-right: 0
           margin-bottom: 0
 
@@ -137,79 +109,6 @@ $block: ".toss-form"
       display: block
 
     // $Common form group MOD: state hidden
-    &_state_hidden
-      display: none
-
-
-  // $Common form board
-  &__board
-    display: block
-    width: 100%
-    background-color: $c-bg-light
-    border: 1px solid $c-border-primary
-    box-shadow: 0px 2px 8px 0 $c-shadow-secondary
-
-
-  // $Common form board header
-  &__board-header
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-    padding: 15px 20px
-    border-bottom: 1px solid $c-border-primary
-    background-color: $c-bg-secondary
-
-    @media screen and (max-width: 960px)
-      padding: 15px
-
-    &_type_light
-      background-color: $c-bg-light
-
-
-  // $Common form board title
-  &__board-title
-    font-size: 18px
-    line-height: 1
-    font-family: $f-sans
-    font-weight: 400
-    color: $c-text-primary
-
-
-  // $Common form board switch
-  &__board-switch
-    position: relative
-    display: block
-    width: 30px
-    height: 30px
-    cursor: pointer
-
-    &:before
-      content: '\e91a'
-      position: absolute
-      top: 50%
-      left: 50%
-      display: block
-      font-family: icons
-      font-size: 30px
-      line-height: 1
-      color: $c-text-primary
-      transform: translate(-50%,-50%)
-      transition: all .3s
-
-
-  // $Common form board content
-  &__board-content
-    padding: 15px 20px
-
-    @media screen and (max-width: 960px)
-      padding: 15px
-
-    // $Common form board content MOD: state visible
-    &_state_visible
-      display: block
-
-    // $Common form board content MOD: state hidden
     &_state_hidden
       display: none
 
@@ -284,8 +183,7 @@ $block: ".toss-form"
     &_size_fifth,
     &_size_sixth,
     &_size_max,
-    &_size_min,
-    &_size_fluid
+    &_size_min
       margin-right: 30px
       margin-bottom: 0
 
@@ -347,17 +245,9 @@ $block: ".toss-form"
       flex-shrink: 1
       width: auto
 
-      @media screen and (max-width: 960px)
-        width: 50%
-
     &_size_min
       flex-grow: 0
       flex-shrink: 1
-      width: auto
-
-    &_size_fluid
-      flex-grow: 0
-      flex-shrink: 0
       width: auto
 
     // $Common form field: MOD: position last
