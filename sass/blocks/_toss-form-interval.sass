@@ -32,12 +32,14 @@ $block: ".toss-form-interval"
     justify-content: flex-end
     align-items: center
 
+  &_adjust_wrap-xs
+
 
   // $Common form interval label
   &__label
     display: block
     width: 100%
-    margin-bottom: 15px
+    margin-bottom: 10px
     font-family: $f-sans
     font-size: 14px
     color: $c-text-primary
@@ -78,10 +80,20 @@ $block: ".toss-form-interval"
 
   // $Common form interval range
   &__range
+    position: relative
     display: flex
     flex-direction: row
     justify-content: flex-start
     align-items: flex-end
+
+    @media screen and (max-width: 400px)
+      #{$block}_adjust_wrap-xs &
+        flex-direction: column
+        align-items: flex-start
+
+    // $Common form interval range MOD: adjust clear action
+    &_adjust_clear
+      padding-right: 22px
 
 
   // $Common form interval item
@@ -89,6 +101,11 @@ $block: ".toss-form-interval"
     flex-grow: 1
     flex-shrink: 1
     width: 100%
+
+    &:first-child
+      @media screen and (max-width: 400px)
+        #{$block}_adjust_wrap-xs &
+          margin-bottom: 15px
 
 
   // $Common form interval delimiter
@@ -100,6 +117,10 @@ $block: ".toss-form-interval"
     width: 30px
     height: 45px
 
+    @media screen and (max-width: 400px)
+      #{$block}_adjust_wrap-xs &
+        display: none
+
     &:after
       content: ""
       position: absolute
@@ -110,3 +131,34 @@ $block: ".toss-form-interval"
       height: 0
       border: 1px solid $c-gray-light
       transform: translate(-50%, -50%)
+
+
+  // $Common form interval clear
+  &__clear
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-end
+    width: 22px
+    font-size: 0
+    line-height: 0
+    color: transparent
+    background-color: transparent
+    border: none
+    cursor: pointer
+    opacity: .5
+    transition: all .3s
+
+    &:before
+      content: '\e91e'
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      color: $c-text-primary
+
+    &:hover
+      opacity: 1

@@ -19,6 +19,12 @@ $block: ".toss-table"
   width: 100%
   border: 1px solid $c-border-primary
 
+  &:not(:last-child)
+    margin-bottom: 30px
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
   // $Common table MOD: type common
   &_type_common
     display: table
@@ -26,6 +32,14 @@ $block: ".toss-table"
   &_page_offers-index-panel,
   &_page_prizes-index-panel
     border: none
+
+  &_page_user-offers-assigned
+
+  &_page_user-offers-redeemed
+
+  &_page_user-prizes-unclaimed
+
+  &_page_user-prizes-claimed
 
 
   // $Common table group
@@ -35,7 +49,36 @@ $block: ".toss-table"
     background-color: $c-bg-light
 
     &:nth-child(odd)
-      background-color: $c-bg-secondary
+      #{$block}_type_common &
+        background-color: $c-bg-secondary
+
+    // $Common table group MOD: highlight blue
+    &_highlight_accent-blue
+      background-color: $c-accent-blue-light
+
+    // $Common table group MOD: highlight red
+    &_highlight_accent-red
+      background-color: $c-accent-red-light
+
+    // $Common table group MOD: highlight yellow
+    &_highlight_accent-yellow
+      background-color: $c-accent-yellow-light
+
+    // $Common table group MOD: highlight green
+    &_highlight_accent-green
+      background-color: $c-accent-green-light
+
+    // $Common table group MOD: highlight purple
+    &_highlight_accent-purple
+      background-color: $c-accent-purple-light
+
+    // $Common table group MOD: highlight pink
+    &_highlight_accent-pink
+      background-color: $c-accent-pink-light
+
+    // $Common table group MOD: highlight gray
+    &_highlight_gray
+      background-color: $c-gray-ultra-light
 
 
   // $Common table row
@@ -91,17 +134,33 @@ $block: ".toss-table"
     &_no-border:not(:last-child)
       border: none
 
-    // $Common table row MOD: state success
-    &_state_success,
-    &_state_success:nth-child(odd),
-    &_state_success:nth-child(even),
-      background-color: lighten($c-accent-green, 40)
+    // $Common table row MOD: highlight blue
+    &_highlight_accent-blue
+      background-color: $c-accent-blue-light
 
-    // $Common table row MOD: state alert
-    &_state_alert,
-    &_state_alert:nth-child(odd),
-    &_state_alert:nth-child(even)
-      background-color: lighten($c-accent-red, 20)
+    // $Common table row MOD: highlight red
+    &_highlight_accent-red
+      background-color: $c-accent-red-light
+
+    // $Common table row MOD: highlight yellow
+    &_highlight_accent-yellow
+      background-color: $c-accent-yellow-light
+
+    // $Common table row MOD: highlight green
+    &_highlight_accent-green
+      background-color: $c-accent-green-light
+
+    // $Common table row MOD: highlight purple
+    &_highlight_accent-purple
+      background-color: $c-accent-purple-light
+
+    // $Common table row MOD: highlight pink
+    &_highlight_accent-pink
+      background-color: $c-accent-pink-light
+
+    // $Common table row MOD: highlight gray
+    &_highlight_gray
+      background-color: $c-gray-ultra-light
 
 
   // $Common table cell
@@ -135,8 +194,13 @@ $block: ".toss-table"
       #{$block}_page_prizes-index-panel &
         border-right: none
 
-    #{$block}_page_prizes-index-panel &
+    #{$block}_page_prizes-index-panel &,
+    #{$block}_page_user-offers-assigned &,
+    #{$block}_page_user-offers-redeemed &,
+    #{$block}_page_user-prizes-unclaimed &,
+    #{$block}_page_user-prizes-claimed &
       align-items: center
+      text-align: center
 
     // $Common table cell first column
     &:nth-child(1)
@@ -148,6 +212,26 @@ $block: ".toss-table"
       #{$block}_page_prizes-index-panel &
         width: 25%
         padding-left: 20px
+
+      #{$block}_page_user-offers-assigned &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 50px
+
+      #{$block}_page_user-offers-redeemed &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 50px
+
+      #{$block}_page_user-prizes-unclaimed &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 50px
+
+      #{$block}_page_user-prizes-claimed &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 50px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
@@ -182,6 +266,18 @@ $block: ".toss-table"
 
       #{$block}_page_prizes-index-panel &
         width: 25%
+
+      #{$block}_page_user-offers-assigned &
+        width: 18%
+
+      #{$block}_page_user-offers-redeemed &
+        width: 18%
+
+      #{$block}_page_user-prizes-unclaimed &
+        width: 23%
+
+      #{$block}_page_user-prizes-claimed &
+        width: 23%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
@@ -220,6 +316,18 @@ $block: ".toss-table"
       #{$block}_page_prizes-index-panel &
         width: 25%
 
+      #{$block}_page_user-offers-assigned &
+        width: 18%
+
+      #{$block}_page_user-offers-redeemed &
+        width: 18%
+
+      #{$block}_page_user-prizes-unclaimed &
+        width: 23%
+
+      #{$block}_page_user-prizes-claimed &
+        width: 23%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 100%
@@ -250,6 +358,18 @@ $block: ".toss-table"
         width: 25%
         padding-right: 20px
 
+      #{$block}_page_user-offers-assigned &
+        width: 12%
+
+      #{$block}_page_user-offers-redeemed &
+        width: 12%
+
+      #{$block}_page_user-prizes-unclaimed &
+        width: 24%
+
+      #{$block}_page_user-prizes-claimed &
+        width: 12%
+
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 100%
@@ -260,6 +380,45 @@ $block: ".toss-table"
         #{$block}_page_prizes-index-panel &
           padding-left: 15px
           padding-right: 15px
+
+    // $Common table cell fifth column
+    &:nth-child(5)
+
+      #{$block}_page_user-offers-assigned &
+        width: 12%
+
+      #{$block}_page_user-offers-redeemed &
+        width: 12%
+
+      #{$block}_page_user-prizes-unclaimed &
+        width: 12%
+
+      #{$block}_page_user-prizes-claimed &
+        width: 12%
+
+    // $Common table cell sixth column
+    &:nth-child(6)
+
+      #{$block}_page_user-offers-assigned &
+        width: 35%
+
+      #{$block}_page_user-offers-redeemed &
+        width: 12%
+
+      #{$block}_page_user-prizes-unclaimed &
+        width: 13%
+
+      #{$block}_page_user-prizes-claimed &
+        width: 12%
+
+    // $Common table cell seventh column
+    &:nth-child(7)
+
+      #{$block}_page_user-offers-redeemed &
+        width: 23%
+
+      #{$block}_page_user-prizes-claimed &
+        width: 13%
 
 
     // $Common table cell MOD: role header
@@ -289,8 +448,16 @@ $block: ".toss-table"
     font-weight: 400
     color: $c-text-primary
 
-    #{$block}_page_prizes-index-panel &
+    #{$block}_page_prizes-index-panel &,
+    #{$block}_page_user-offers-assigned &,
+    #{$block}_page_user-offers-redeemed &
       text-align: center
+
+    #{$block}_page_user-offers-assigned #{$block}__cell:nth-child(2) &,
+    #{$block}_page_user-offers-redeemed #{$block}__cell:nth-child(2) &,
+    #{$block}_page_user-prizes-unclaimed #{$block}__cell:nth-child(2) &,
+    #{$block}_page_user-prizes-claimed #{$block}__cell:nth-child(2) &
+      text-align: left
 
     &:before
       display: inline-block
@@ -364,5 +531,65 @@ $block: ".toss-table"
 
   // $Common table action
   &__action
-    #{$block}_page_offers-index-panel &:nth-child(1)
-      margin-right: 10px
+    &:not(:last-child)
+      #{$block}_page_offers-index-panel &:nth-child(1)
+        margin-right: 10px
+
+
+  // $Common table labels
+  &__labels
+
+    #{$block}_page_user-offers-assigned #{$block}__cell:nth-child(6) &,
+    #{$block}_page_user-offers-redeemed #{$block}__cell:nth-child(7) &
+      text-align: left
+
+
+  // $Common table label
+  &__label
+
+    #{$block}_page_user-prizes-unclaimed #{$block}__cell:nth-child(6) &,
+    #{$block}_page_user-prizes-claimed #{$block}__cell:nth-child(7) &
+      margin-bottom: 0
+      margin-right: 0
+
+
+  // $Common table link
+  &__link
+    display: inline-block
+    max-width: 100%
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: $c-accent-blue
+    vertical-align: middle
+    text-decoration: none
+    transition: color .3s
+    cursor: pointer
+
+    &:hover,
+    &:focus
+      outline: none
+      text-decoration: underline
+      color: $c-accent-blue
+
+
+  // $Common table icon
+  &__icon
+    display: inline-block
+
+    &:after
+      content: ''
+      font-family: icons
+      font-size: 30px
+      line-height: 1
+      color: $c-gray-medium
+
+    // $Common table icon MOD: role drink
+    &_role_drink
+      &:after
+        content: '\e925'
+
+    // $Common table icon MOD: role food
+    &_role_food
+      &:after
+        content: '\e926'

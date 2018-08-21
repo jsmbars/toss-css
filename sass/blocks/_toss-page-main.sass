@@ -17,13 +17,30 @@ $block: ".toss-page-main"
 #{$block}
   display: block
   width: 100%
-  padding-bottom: 30px
+
+  &_adjust_screen
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
 
   &_page_offers-index
 
   &_page_prizes-index
 
   &_page_prizes-details
+
+  &_page_user
+
+  &_page_user-edit
+
+  &_page_user-offers
+
+  &_page_user-prizes
+
+  &_page_user-spins
 
 
   // $Page main dashboard
@@ -63,12 +80,45 @@ $block: ".toss-page-main"
       padding-bottom: 0
 
 
+  &__content
+
+    #{$block}_adjust_screen &
+      flex-grow: 1
+      flex-shrink: 1
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      max-height: 100%
+      padding-top: 0
+      padding-bottom: 0
+
+    &:last-child
+      padding-bottom: 60px
+
+      #{$block}_adjust_screen &
+        padding-bottom: 0
+
+      @media screen and (max-width: 480px)
+        padding-bottom: 55px
+
+
   // $Page main inner container
   &__inner
     display: block
     width: 100%
     max-width: 1200px
     margin: 0 auto
+
+
+    #{$block}_adjust_screen #{$block}__content &
+      padding-top: 30px
+      padding-bottom: 30px
+
+    @media screen and (max-width: 480px)
+      #{$block}_adjust_screen #{$block}__content &
+        padding-top: 25px
+        padding-bottom: 25px
 
 
   // $Page main info group
@@ -78,6 +128,9 @@ $block: ".toss-page-main"
     justify-content: space-between
     align-items: center
     width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
 
     @media screen and (max-width: 960px)
       flex-direction: column
@@ -180,6 +233,23 @@ $block: ".toss-page-main"
   // $Page main action
   &__action
 
+    &_adjust_landing
+      padding: 25px 50px
+      font-size: 40px
+      font-weight: 600
+      line-height: 1.2
+
+      @media screen and (max-width: 640px)
+        padding: 20px 40px
+
+      @media screen and (max-width: 480px)
+        padding: 20px 30px
+        font-size: 30px
+
+      @media screen and (max-width: 400px)
+        padding: 20px
+        font-size: 25px
+
 
   // $Page main filter
   &__filter
@@ -188,89 +258,6 @@ $block: ".toss-page-main"
 
     &:not(:last-child)
       margin-bottom: 20px
-
-
-  // $Page main dropdown
-  &__dropdown
-    display: block
-    width: 100%
-
-
-  // $Page main dropdown header
-  &__dropdown-header
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-
-  // $Page main dropdown switch
-  &__dropdown-switch
-    display: inline-block
-    font-family: $f-sans
-    font-size: 16px
-    line-height: 1
-    color: $c-text-primary
-    white-space: nowrap
-    cursor: pointer
-    text-decoration: none
-
-    &:before,
-    &:after
-      content: ''
-      display: inline-block
-      font-family: icons
-      color: $c-text-primary
-
-    &:before
-      margin-right: 10px
-
-    &:after
-      margin-left: 10px
-
-    &:hover
-      color: $c-text-secondary
-
-      &:before,
-      &:after
-        color: $c-text-secondary
-
-    // $Page main dropdown switch MOD: role filter
-    &_role_filter
-      &:before
-        content: '\e917'
-        font-size: 18px
-        line-height: 16px
-
-      &:after
-        display: none
-
-    // $Page main dropdown switch MOD: role filter state closed
-    &_role_filter#{&}_state_closed
-      &:before
-          content: '\e918'
-
-
-  // $Page main dropdown extra content
-  &__dropdown-extra
-    flex-grow: 1
-
-
-  // $Page main dropdown content
-  &__dropdown-content
-
-    // $Page main dropdown content MOD: state closed
-    &_state_closed
-      display: none
-
-
-  // $Page main dropdown inner
-  &__dropdown-inner
-    display: block
-    width: 100%
-    margin-top: 20px
-    padding: 20px 30px
-    border-bottom: 1px solid $c-border-primary
-    border-top: 1px solid $c-border-primary
 
 
   // $Page main text placeholder
