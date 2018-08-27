@@ -189,6 +189,12 @@ $block: ".toss-button"
   // $Common button variations:
 
   // Color modifiers
+  &_color_accent-primary
+    $background-color: $c-accent-primary
+    +button-common($background-color: $background-color)
+    +button-common-hover($background-color: $background-color)
+
+  // Color modifiers
   &_color_accent-blue
     $background-color: $c-accent-blue
     +button-common($background-color: $background-color)
@@ -221,6 +227,11 @@ $block: ".toss-button"
 
 
   // Border modifiers
+  &_border_accent-primary
+    +button-bordered($color: $c-accent-primary, $bg-color: transparent, $border-color: $c-accent-primary)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-primary, $border-color: $c-accent-primary)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-primary, $border-color: $c-accent-primary)
+
   &_border_accent-blue
     +button-bordered($color: $c-accent-blue, $bg-color: transparent, $border-color: $c-accent-blue)
     +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
