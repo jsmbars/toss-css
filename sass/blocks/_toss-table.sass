@@ -30,7 +30,10 @@ $block: ".toss-table"
     display: table
 
   &_page_offers-index-panel,
-  &_page_prizes-index-panel
+  &_page_prizes-index-panel,
+  &_page_user-profile-spins-panel,
+  &_page_user-profile-prizes-panel,
+  &_page_user-profile-gems-panel
     border: none
 
   &_page_user-offers-assigned
@@ -40,6 +43,12 @@ $block: ".toss-table"
   &_page_user-prizes-unclaimed
 
   &_page_user-prizes-claimed
+
+  &_page_user-profile-spins-panel
+
+  &_page_user-profile-prizes-panel
+
+  &_page_user-profile-gems-panel
 
 
   // $Common table group
@@ -95,12 +104,19 @@ $block: ".toss-table"
       display: table-row
 
     #{$block}_page_offers-index-panel &,
-    #{$block}_page_prizes-index-panel &
+    #{$block}_page_prizes-index-panel &,
+    #{$block}_page_user-profile-spins-panel &,
+    #{$block}_page_user-profile-prizes-panel &,
+    #{$block}_page_user-profile-gems-panel &
       background-color: transparent
 
     @media screen and (max-width: 1120px)
       #{$block}_page_offers-index-panel &,
       #{$block}_page_prizes-index-panel &
+        flex-wrap: wrap
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_user-profile-gems-panel &
         flex-wrap: wrap
 
     &:nth-child(odd)
@@ -165,6 +181,7 @@ $block: ".toss-table"
 
   // $Common table cell
   &__cell
+    position: relative
     flex-grow: 1
     display: flex
     flex-direction: column
@@ -191,16 +208,40 @@ $block: ".toss-table"
       border-right: 1px solid $c-border-primary
 
       #{$block}_page_offers-index-panel &,
-      #{$block}_page_prizes-index-panel &
+      #{$block}_page_prizes-index-panel &,
+      #{$block}_page_user-profile-spins-panel &,
+      #{$block}_page_user-profile-prizes-panel &,
+      #{$block}_page_user-profile-gems-panel &
         border-right: none
+
+      &:after
+        #{$block}_page_user-profile-spins-panel &,
+        #{$block}_page_user-profile-prizes-panel &,
+        #{$block}_page_user-profile-gems-panel &
+          content: ''
+          position: absolute
+          right: 0
+          top: 50%
+          height: 30px
+          margin-top: -15px
+          border-right: 1px solid $c-border-primary
+
 
     #{$block}_page_prizes-index-panel &,
     #{$block}_page_user-offers-assigned &,
     #{$block}_page_user-offers-redeemed &,
     #{$block}_page_user-prizes-unclaimed &,
-    #{$block}_page_user-prizes-claimed &
+    #{$block}_page_user-prizes-claimed &,
+    #{$block}_page_user-profile-spins-panel &,
+    #{$block}_page_user-profile-prizes-panel &,
+    #{$block}_page_user-profile-gems-panel &
       align-items: center
       text-align: center
+
+    #{$block}_page_user-profile-spins-panel &,
+    #{$block}_page_user-profile-prizes-panel &,
+    #{$block}_page_user-profile-gems-panel &
+      justify-content: flex-start
 
     // $Common table cell first column
     &:nth-child(1)
@@ -233,6 +274,15 @@ $block: ".toss-table"
         flex-shrink: 0
         width: 50px
 
+      #{$block}_page_user-profile-spins-panel &
+        width: 33%
+
+      #{$block}_page_user-profile-prizes-panel &
+        width: 50%
+
+      #{$block}_page_user-profile-gems-panel &
+        width: 33%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 50%
@@ -258,6 +308,9 @@ $block: ".toss-table"
           padding-left: 15px
           padding-right: 15px
 
+        #{$block}_page_user-profile-gems-panel &
+          width: 50%
+
     // $Common table cell second column
     &:nth-child(2)
       #{$block}_page_offers-index-panel &
@@ -278,6 +331,15 @@ $block: ".toss-table"
 
       #{$block}_page_user-prizes-claimed &
         width: 23%
+
+      #{$block}_page_user-profile-spins-panel &
+        width: 33%
+
+      #{$block}_page_user-profile-prizes-panel &
+        width: 50%
+
+      #{$block}_page_user-profile-gems-panel &
+        width: 33%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
@@ -307,6 +369,9 @@ $block: ".toss-table"
         #{$block}_page_prizes-index-panel &
           padding-left: 15px
 
+        #{$block}_page_user-profile-gems-panel &
+          width: 50%
+
     // $Common table cell third column
     &:nth-child(3)
       #{$block}_page_offers-index-panel &
@@ -327,6 +392,15 @@ $block: ".toss-table"
 
       #{$block}_page_user-prizes-claimed &
         width: 23%
+
+      #{$block}_page_user-profile-spins-panel &
+        width: 33%
+
+      #{$block}_page_user-profile-prizes-panel &
+        width: 50%
+
+      #{$block}_page_user-profile-gems-panel &
+        width: 33%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
@@ -351,6 +425,10 @@ $block: ".toss-table"
 
         #{$block}_page_prizes-index-panel &
           padding-right: 15px
+
+        #{$block}_page_user-profile-gems-panel &
+          width: 100%
+          border-top: 1px solid $c-border-primary
 
     // $Common table cell fourth column
     &:nth-child(4)

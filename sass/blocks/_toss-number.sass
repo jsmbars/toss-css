@@ -51,16 +51,35 @@ $block: ".toss-number"
     max-width: 100%
     font-family: $f-sans
     font-size: 40px
-    line-height: 40px
+    line-height: 1
+    font-weight: 600
     color: $c-text-primary
 
     @media screen and (max-width: 960px)
       font-size: 35px
-      line-height: 35px
 
     @media screen and (max-width: 640px)
       font-size: 30px
-      line-height: 30px
+
+    // $Number value MOD: size extra small
+    &_size_xs
+      font-size: 16px
+
+      @media screen and (max-width: 960px)
+        font-size: 16px
+
+      @media screen and (max-width: 640px)
+        font-size: 16px
+
+    // $Number value MOD: size small
+    &_size_s
+      font-size: 24px
+
+      @media screen and (max-width: 960px)
+        font-size: 24px
+
+      @media screen and (max-width: 640px)
+        font-size: 24px
 
 
   // $Number label
@@ -89,3 +108,11 @@ $block: ".toss-number"
         margin-top: 0
         padding-left: 10px
         text-align: left
+
+    // $Number label MOD: type bold
+    &_type_bold
+      font-weight: 600
+
+    // $Number label MOD: type light
+    &_type_light
+      font-weight: 300

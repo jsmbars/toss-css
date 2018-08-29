@@ -163,6 +163,17 @@ $block: ".toss-indicator"
     #{$block}_color_gray &
       color: $c-gray-medium
 
+    // $Indicator label MOD: adjust board title
+    &_adjust_board-title
+      font-size: inherit
+      line-height: inherit
+      vertical-align: baseline
+
+      @media screen and (max-width: 640px)
+        font-size: inherit
+        line-height: inherit
+
+
   // $Indicator label after marker
   // $Indicator marker after label
   &__marker + #{&}__label,

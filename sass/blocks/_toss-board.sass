@@ -50,11 +50,63 @@ $block: ".toss-board"
     @media screen and (max-width: 480px)
       padding: 20px 15px
 
+    &_adjust_actions
+      @media screen and (max-width: 960px)
+        flex-wrap: wrap
+
+
+  // $Board header info
+  &__header-info
+    flex-grow: 1
+    flex-shrink: 1
+
+    #{$block}__header_adjust_actions &
+      padding-right: 20px
+
+
+    @media screen and (max-width: 960px)
+      #{$block}__header_adjust_actions &
+        width: 100%
+        padding-right: 0
+
 
   // $Board header toggle
   &__header-toggle
     flex-grow: 0
     flex-shrink: 0
+
+
+  // $Board header actions
+  &__header-actions
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+    @media screen and (max-width: 960px)
+      #{$block}__header_adjust_actions &
+        flex-grow: 1
+        flex-shrink: 1
+        order: -99
+        width: 100%
+        padding-bottom: 15px
+        margin-bottom: 15px
+        border-bottom: 1px solid $c-border-primary
+
+    @media screen and (max-width: 480px)
+      flex-direction: column
+
+
+  // $Board header action
+  &__header-action
+    &:not(:last-child)
+      margin-right: 15px
+
+      @media screen and (max-width: 480px)
+        margin-right: 0
+        margin-bottom: 15px
 
 
   // $Board content
@@ -102,6 +154,10 @@ $block: ".toss-board"
 
       @media screen and (max-width: 640px)
         font-size: 22px
+
+    &_justify_center-m-major
+      @media screen and (max-width: 960px)
+        text-align: center
 
 
   // $Board title faded

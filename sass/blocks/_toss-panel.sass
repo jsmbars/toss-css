@@ -81,6 +81,8 @@ $block: ".toss-panel"
 
   &_page_prizes-details-assignment
 
+  &_page_user-profile
+
   &_page_user-offers-assigned
 
   &_page_user-offers-redeemed
@@ -427,6 +429,8 @@ $block: ".toss-panel"
     &:before
       display: inline-block
       font-family: 'icons'
+      font-size: inherit
+      line-height: inherit
       color: inherit
       vertical-align: baseline
 
@@ -453,6 +457,22 @@ $block: ".toss-panel"
     &_icon_email
       &:before
         content: '\e91f'
+
+    &_icon_slot-machine
+      &:before
+        content: '\e92a'
+
+    &_icon_trophy
+      &:before
+        content: '\e92d'
+
+    &_icon_diamond
+      &:before
+        content: '\e929'
+
+    &_icon_tickets
+      &:before
+        content: '\e92b'
 
     &:not(:last-child)
       margin-bottom: 5px
@@ -489,8 +509,6 @@ $block: ".toss-panel"
         text-align: center
 
     &:before
-      font-size: 18px
-      line-height: 18px
       margin-right: 10px
 
     // $Panel title MOD: size small
@@ -500,6 +518,19 @@ $block: ".toss-panel"
     // $Panel title MOD: size large
     &_size_l
       font-size: 20px
+
+    // $Panel title MOD: size extra large
+    &_size_xl
+      font-size: 22px
+
+    &_size_xl#{&}_icon_slot-machine,
+    &_size_xl#{&}_icon_trophy,
+    &_size_xl#{&}_icon_diamond,
+    &_size_xl#{&}_icon_tickets
+      &:before
+        margin-top: -5px
+        font-size: 30px
+        vertical-align: middle
 
 
   // $Panel title faded
@@ -538,8 +569,6 @@ $block: ".toss-panel"
     color: $c-text-primary
 
     &:before
-      font-size: 14px
-      line-height: 14px
       margin-right: 5px
 
 

@@ -32,7 +32,7 @@ $block: ".toss-page-main"
 
   &_page_prizes-details
 
-  &_page_user
+  &_page_user-profile
 
   &_page_user-edit
 
@@ -119,6 +119,62 @@ $block: ".toss-page-main"
       #{$block}_adjust_screen #{$block}__content &
         padding-top: 25px
         padding-bottom: 25px
+
+
+  // $Page main layout
+  &__layout
+    display: flex
+    flex-direction:
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+
+    @media screen and (max-width: 1120px)
+      flex-direction: column
+
+    // $Page main layout MOD: sidebar single
+    &_type_sidebar-single
+
+
+  // $Page main layout sidebar
+  &__layout-sidebar
+    #{$block}__layout_type_sidebar-single &
+      width: 400px
+
+    @media screen and (max-width: 1120px)
+      #{$block}__layout_type_sidebar-single &
+        width: 100%
+
+    // $Page main layout sidebar MOD: position before
+    &_position_before
+      #{$block}__layout_type_sidebar-single &
+        padding-right: 30px
+
+      @media screen and (max-width: 1120px)
+        #{$block}__layout_type_sidebar-single &
+          padding-right: 0
+          margin-bottom: 30px
+
+    // $Page main layout sidebar MOD: position after
+    &_position_after
+      #{$block}__layout_type_sidebar-single &
+        padding-left: 30px
+
+      @media screen and (max-width: 1120px)
+        #{$block}__layout_type_sidebar-single &
+          padding-left: 0
+          margin-top: 30px
+
+
+  // $Page main layout content
+  &__layout-content
+    #{$block}__layout_type_sidebar-single &
+      width: calc(100% - 400px)
+
+    @media screen and (max-width: 1120px)
+      #{$block}__layout_type_sidebar-single &
+        width: 100%
+
 
 
   // $Page main info group

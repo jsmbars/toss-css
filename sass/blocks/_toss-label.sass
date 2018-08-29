@@ -60,7 +60,6 @@ $block: ".toss-label"
 
   position: relative
   display: inline-block
-  margin-bottom: 10px
   padding: 12px 25px
   border-radius: 4px
   font-family: $f-sans
@@ -74,7 +73,9 @@ $block: ".toss-label"
   border: none
   overflow: hidden
 
-  &:not(:last-child)
+  & + &,
+  &:first-child:not(:only-child)
+    margin-bottom: 10px
     margin-right: 10px
 
   &_type_clearable
@@ -246,7 +247,29 @@ $block: ".toss-label"
     +label-common($background-color: $c-accent-pink-medium)
 
   &_color_gray-medium
-    +label-common($background-color: $c-gray-light)
+    +label-common($background-color: $c-gray-light, $color: $c-text-light)
+
+
+  &_color_accent-blue-light
+    +label-common($background-color: $c-accent-blue-light)
+
+  &_color_accent-red-light
+    +label-common($background-color: $c-accent-red-light)
+
+  &_color_accent-yellow-light
+    +label-common($background-color: $c-accent-yellow-light)
+
+  &_color_accent-green-light
+    +label-common($background-color: $c-accent-green-light)
+
+  &_color_accent-purple-light
+    +label-common($background-color: $c-accent-purple-light)
+
+  &_color_accent-pink-light
+    +label-common($background-color: $c-accent-pink-light)
+
+  &_color_gray-light
+    +label-common($background-color: $c-gray-extra-light)
 
 
   // Border modifiers
