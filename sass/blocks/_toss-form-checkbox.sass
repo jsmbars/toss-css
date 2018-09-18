@@ -23,6 +23,10 @@ $block: ".toss-form-checkbox"
   // $Common form checkbox MOD: role control reversed
   &_role_control-reverse
 
+  // $Common form checkbox MOD: no top label
+  &_no-label
+    padding-top: 20px
+
 
   // $Common form checkbox label
   &__label
@@ -142,13 +146,13 @@ $block: ".toss-form-checkbox"
       #{$block}__input:checked:disabled ~ &
         color: $c-text-primary
 
+    // $Common form checkbox input label text MOD: no-label text
+    &:empty
+      padding-left: 25px
+
     // $Common form checkbox input label text MOD: no-wrap text
     &_type_no-wrap
       white-space: nowrap
-
-    // $Common form checkbox input label text MOD: no-label text
-    &_type_no-label
-      padding-top: 25px
 
     // $Common form checkbox input label text MOD: type reversed label text
     &_type_reversed
@@ -165,10 +169,9 @@ $block: ".toss-form-checkbox"
         padding-left: 0
         padding-right: 2px
 
-    // $Common form checkbox input label text MOD: type reversed label text MOD: no-label text
-    &_type_reversed#{&}_type_no-label
-      padding-left: 0
-      padding-right: 35px
+      &:empty
+        padding-left: 0
+        padding-right: 25px
 
     // $Common form checkbox input label text MOD: small text
     &_size_small

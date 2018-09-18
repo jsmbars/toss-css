@@ -23,6 +23,10 @@ $block: ".toss-form-switch"
   // $Common form switch MOD: role control reversed
   &_role_control-reverse
 
+  // $Common form switch MOD: no top label
+  &_no-label
+    padding-top: 20px
+
 
   // $Common form switch label
   &__label
@@ -128,6 +132,10 @@ $block: ".toss-form-switch"
         background-color: $c-accent-primary
         left: 27px
 
+    // $Common form switch input label text MOD: no-label text
+    &:empty
+      padding-left: 50px
+
     // $Common form switch input label text MOD: no-wrap text
     &_type_no-wrap
       white-space: nowrap
@@ -149,14 +157,9 @@ $block: ".toss-form-switch"
           left: auto
           right: 2px
 
-    // $Common form switch input label text MOD: no-label text
-    &_type_no-label
-      padding-left: 50px
-
-    // $Common form switch input label text MOD: type reversed label text MOD: no-label text
-    &_type_reversed#{&}_type_no-label
-      padding-left: 0
-      padding-right: 50px
+      &:empty
+        padding-left: 0
+        padding-right: 50px
 
     // $Common form switch input label text MOD: small text
     &_size_small
