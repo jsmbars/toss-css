@@ -33,15 +33,11 @@ $block: ".toss-form-select"
     justify-content: flex-end
     align-items: center
 
-  // $Common form select MOD: no top label
-  &_no-label
+  // $Common form select MOD: adjust no top label
+  &_adjust_no-label
     padding-top: 20px
 
-  // $Common form select MOD: size small
-  &_size_s
-
-  // $Common form select MOD: type narrow
-  &_type_narrow
+  &_adjust_clear
 
 
   // $Common form select label
@@ -62,7 +58,7 @@ $block: ".toss-form-select"
       flex-shrink: 0
       width: auto
       margin-bottom: 0
-      font-weight: 400
+      font-weight: 600
       white-space: nowrap
 
     #{$block}_role_control &
@@ -97,12 +93,30 @@ $block: ".toss-form-select"
         white-space: normal
 
     // $Common form select label MOD: size small
-    &_size_small
+    &_size_s
       font-size: 12px
 
     // $Common form select label MOD: no wrap
     &_nowrap
       white-space: nowrap
+
+    &_type_border
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        align-self: stretch
+        width: auto
+        min-height: 50px
+        padding: 15px
+        margin: 0
+        border: 1px solid $c-border-primary
+        border-radius: 2px
+        white-space: nowrap
+
+      #{$block}_role_control &
+        border-right: none
+
+      #{$block}_role_control-reverse &
+        border-left: none
 
 
   // $Common form select label text
@@ -114,12 +128,20 @@ $block: ".toss-form-select"
     color: $c-text-secondary
 
 
+  // $Common form field label icon
+  &__label-icon
+    font-family: 'icons'
+    line-height: 1
+    font-weight: 400
+    font-size: inherit
+    color: inherit
+
+
   // $Common form select control
   &__control
     position: relative
 
-    // $Common form select control MOD: adjust clear action
-    &_adjust_clear
+    #{$block}_adjust_clear &
       padding-right: 22px
 
     // $Common form select input CONTEXT: $Common form select MOD: role control
@@ -202,6 +224,8 @@ $block: ".toss-form-select"
 
   // $Common form select react select component wrap
   &__component
+    display: block
+    width: 100%
 
 
   // $Common form select note
@@ -325,7 +349,7 @@ $block: ".toss-form-select"
 
   & .Select--multi .Select-value
     margin-left: 10px
-    background-color: $c-accent-green-medium
+    background-color: $c-accent-primary-medium
     border: none
     border-radius: 5px
     line-height: 1
@@ -554,7 +578,7 @@ $block: ".toss-form-select"
     & .Select-staff-member-type
       display: inline-block
 
-  &_type_narrow
+  &_size_m
 
     & .Select-control
       height: 40px

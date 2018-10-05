@@ -194,14 +194,13 @@ $block: ".toss-button"
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
-  // Color modifiers
-  &_color_accent-blue
-    $background-color: $c-accent-blue
+  &_color_accent-red
+    $background-color: $c-accent-red
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
-  &_color_accent-red
-    $background-color: $c-accent-red
+  &_color_accent-orange
+    $background-color: $c-accent-orange
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
@@ -212,6 +211,12 @@ $block: ".toss-button"
 
   &_color_accent-green
     $background-color: $c-accent-green
+    +button-common($background-color: $background-color)
+    +button-common-hover($background-color: $background-color)
+
+  // Color modifiers
+  &_color_accent-blue
+    $background-color: $c-accent-blue
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
@@ -232,15 +237,15 @@ $block: ".toss-button"
     +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-primary, $border-color: $c-accent-primary)
     +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-primary, $border-color: $c-accent-primary)
 
-  &_border_accent-blue
-    +button-bordered($color: $c-accent-blue, $bg-color: transparent, $border-color: $c-accent-blue)
-    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
-    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
-
   &_border_accent-red
     +button-bordered($color: $c-accent-red, $bg-color: transparent, $border-color: $c-accent-red)
     +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-red, $border-color: $c-accent-red)
     +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-red, $border-color: $c-accent-red)
+
+  &_border_accent-orange
+    +button-bordered($color: $c-accent-orange, $bg-color: transparent, $border-color: $c-accent-orange)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-orange, $border-color: $c-accent-orange)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-orange, $border-color: $c-accent-orange)
 
   &_border_accent-yellow
     +button-bordered($color: $c-accent-yellow, $bg-color: transparent, $border-color: $c-accent-yellow)
@@ -251,6 +256,11 @@ $block: ".toss-button"
     +button-bordered($color: $c-accent-green, $bg-color: transparent, $border-color: $c-accent-green)
     +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-green, $border-color: $c-accent-green)
     +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-green, $border-color: $c-accent-green)
+
+  &_border_accent-blue
+    +button-bordered($color: $c-accent-blue, $bg-color: transparent, $border-color: $c-accent-blue)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
 
   &_border_accent-purple
     +button-bordered($color: $c-accent-purple, $bg-color: transparent, $border-color: $c-accent-purple)
@@ -308,6 +318,18 @@ $block: ".toss-button"
   // $Common button MOD: icon block
   &_icon_block
     +button-with-icon-left($icon: '\e928', $size: 14px)
+
+  // $Common button MOD: icon table
+  &_icon_table
+    +button-with-icon-left($icon: '\ea71', $size: 14px)
+
+  // $Common button MOD: icon chart
+  &_icon_chart-line
+    +button-with-icon-left($icon: '\e99b', $size: 14px)
+
+  // $Common button MOD: icon chart
+  &_icon_chart-pie
+    +button-with-icon-left($icon: '\e99a', $size: 14px)
 
 
   // Specific buttons

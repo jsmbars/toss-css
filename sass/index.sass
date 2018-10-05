@@ -6,6 +6,7 @@
 //
 // VENDOR...............................
 //  $React-select.......................
+//  $React-dates........................
 //
 // HELPERS..............................Variables, mixins, elements
 //  $Fonts..............................Offline and online fonts
@@ -56,6 +57,10 @@
 
 // $React-select
 @import ./vendor/react-select/default.scss
+
+// $React-dates
+// Support of the old react-dates version, new version uses inline styles
+@import ./vendor/react-dates/styles.scss
 
 
 ////////////////////////////////////////
@@ -163,7 +168,6 @@
 // $Profile
 @import './blocks/toss-profile'
 
-
 // $Menu
 @import './blocks/toss-menu'
 
@@ -188,5 +192,19 @@
 // $Content
 @import './blocks/toss-content'
 
+// $Legend
+@import './blocks/toss-legend'
+
+// $Chart
+@import './blocks/toss-chart'
+
+// $Popover
+@import './blocks/toss-popover'
+
+// $Details
+@import './blocks/toss-details'
 
 // Restyled existing vendor modules
+
+// $Date control (based on react-dates, includes single date / week / date range pickers)
+@import './blocks/date-control'

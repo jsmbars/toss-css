@@ -35,6 +35,11 @@ $block: ".toss-body"
   &_no-scroll
     overflow: hidden
 
+  // $Body MOD: no-scroll with iOS bug fix for modal inputs
+  &_no-scroll.iosBugFixModalInput
+    position: fixed
+    overflow: visible
+
   &_adjust_screen
     display: flex
     flex-direction: column

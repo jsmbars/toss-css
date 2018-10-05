@@ -23,8 +23,8 @@ $block: ".toss-form-checkbox"
   // $Common form checkbox MOD: role control reversed
   &_role_control-reverse
 
-  // $Common form checkbox MOD: no top label
-  &_no-label
+  // $Common form checkbox MOD: adjust no top label
+  &_adjust_no-label
     padding-top: 20px
 
 
@@ -67,6 +67,10 @@ $block: ".toss-form-checkbox"
     justify-content: flex-start
     align-items: flex-start
     cursor: pointer
+
+    // Fix nowrap issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      display: block
 
     // $Common form checkbox input label MOD: adjust field
     // $Common form checkbox input label MOD: adjust field fluid
@@ -174,5 +178,5 @@ $block: ".toss-form-checkbox"
         padding-right: 25px
 
     // $Common form checkbox input label text MOD: small text
-    &_size_small
+    &_size_s
       font-size: 12px

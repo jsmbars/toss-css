@@ -57,6 +57,11 @@ $block: ".toss-profile"
       width: 100px
       height: 100px
 
+    // $Profile avatar MOD: size extra small
+    &_size_xs
+      width: 60px
+      height: 60px
+
     // $Profile avatar MOD: size small
     &_size_s
       width: 80px
@@ -148,23 +153,24 @@ $block: ".toss-profile"
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
+    align-self: center
     width: 100%
 
     #{$block}_layout_column &
       align-items: center
 
-    // $Profile content area MOD: align middle
-    &_align_middle
-      align-self: center
-
 
   // $Profile content area CONTEXT: next to the service area
   &__service + #{&}__content
-    padding-left: 30px
+    padding-left: 20px
 
     #{$block}_layout_column &
       padding-left: 0
-      padding-top: 30px
+      padding-top: 20px
+
+    @media screen and (max-width: 960px)
+      padding-left: 0
+      padding-top: 20px
 
 
   // $Profile header area
@@ -175,6 +181,9 @@ $block: ".toss-profile"
     text-align: left
 
     #{$block}_layout_column &
+      text-align: center
+
+    @media screen and (max-width: 960px)
       text-align: center
 
     &:not(:last-child)
@@ -191,6 +200,9 @@ $block: ".toss-profile"
     font-weight: 400
 
     #{$block}_layout_column &
+      text-align: center
+
+    @media screen and (max-width: 960px)
       text-align: center
 
     &:not(:last-child)

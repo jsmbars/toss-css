@@ -27,9 +27,6 @@ $block: ".toss-modal"
   max-width: 960px
   margin: 0 auto
 
-  &-portal &
-    z-index: 10002
-
   // $Modal window MOD: state visible
   &_state_visible
     display: block
@@ -255,6 +252,9 @@ $block: ".toss-modal"
     &:not(:last-child)
       margin-bottom: 30px
 
+    &_justify_center
+      text-align: center
+
 
   // $Modal window actions
   &__actions
@@ -293,6 +293,20 @@ $block: ".toss-modal"
 
       @media screen and (max-width: 480px), screen and (max-height: 480px)
         max-width: 200px
+
+    &_size_auto
+      width: auto
+      max-width: 100%
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: 100%
+
+    &_size_actual
+      width: auto
+      max-width: none
+
+      @media screen and (max-width: 480px), screen and (max-height: 480px)
+        max-width: none
 
 
   // $Modal window title
@@ -431,6 +445,9 @@ $block: ".toss-modal"
       // $Modal window portal MOD: state hidden
       &_state_hidden
         display: none
+
+    &-portal #{&}
+      z-index: 10002
 
 
     // $Modal window overlay
