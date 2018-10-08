@@ -124,7 +124,7 @@ $block: ".toss-page-main"
   // $Page main layout
   &__layout
     display: flex
-    flex-direction:
+    flex-direction: row
     justify-content: flex-start
     align-items: flex-start
     width: 100%
@@ -180,6 +180,10 @@ $block: ".toss-page-main"
     @media screen and (max-width: 1120px)
       #{$block}__layout_type_sidebar-single &
         width: 100%
+
+    // Fix nested image aspect ratio issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      min-height: 1px
 
 
 
