@@ -29,32 +29,68 @@ $block: ".toss-panel"
     @media screen and (max-width: 480px)
       margin-bottom: 25px
 
-  // $Panel MOD: highlight blue
-  &_highlight_accent-blue
-    background-color: $c-accent-blue-light
+  // $Panel MOD: highlight red medium
+  &_highlight_accent-red-medium
+    background-color: $c-accent-red-medium
 
-  // $Panel MOD: highlight red
-  &_highlight_accent-red
+  // $Panel MOD: highlight orange medium
+  &_highlight_accent-orange-medium
+    background-color: $c-accent-orange-medium
+
+  // $Panel MOD: highlight yellow medium
+  &_highlight_accent-yellow-medium
+    background-color: $c-accent-yellow-medium
+
+  // $Panel MOD: highlight green medium
+  &_highlight_accent-green-medium
+    background-color: $c-accent-green-medium
+
+  // $Panel MOD: highlight blue medium
+  &_highlight_accent-blue-medium
+    background-color: $c-accent-blue-medium
+
+  // $Panel MOD: highlight purple medium
+  &_highlight_accent-purple-medium
+    background-color: $c-accent-purple-medium
+
+  // $Panel MOD: highlight pink medium
+  &_highlight_accent-pink-medium
+    background-color: $c-accent-pink-medium
+
+  // $Panel MOD: highlight gray medium
+  &_highlight_gray-medium
+    background-color: $c-gray-extra-light
+
+  // $Panel MOD: highlight red light
+  &_highlight_accent-red-light
     background-color: $c-accent-red-light
 
-  // $Panel MOD: highlight yellow
-  &_highlight_accent-yellow
+  // $Panel MOD: highlight orange light
+  &_highlight_accent-orange-light
+    background-color: $c-accent-orange-light
+
+  // $Panel MOD: highlight yellow light
+  &_highlight_accent-yellow-light
     background-color: $c-accent-yellow-light
 
-  // $Panel MOD: highlight green
-  &_highlight_accent-green
+  // $Panel MOD: highlight green light
+  &_highlight_accent-green-light
     background-color: $c-accent-green-light
 
-  // $Panel MOD: highlight purple
-  &_highlight_accent-purple
+  // $Panel MOD: highlight blue light
+  &_highlight_accent-blue-light
+    background-color: $c-accent-blue-light
+
+  // $Panel MOD: highlight purple light
+  &_highlight_accent-purple-light
     background-color: $c-accent-purple-light
 
-  // $Panel MOD: highlight pink
-  &_highlight_accent-pink
+  // $Panel MOD: highlight pink light
+  &_highlight_accent-pink-light
     background-color: $c-accent-pink-light
 
-  // $Panel MOD: highlight gray
-  &_highlight_gray
+  // $Panel MOD: highlight gray light
+  &_highlight_gray-light
     background-color: $c-gray-ultra-light
 
   &_role_manager
@@ -80,6 +116,8 @@ $block: ".toss-panel"
   &_page_prizes-details-tc
 
   &_page_prizes-details-assignment
+
+  &_page_user-profile
 
   &_page_user-offers-assigned
 
@@ -242,13 +280,22 @@ $block: ".toss-panel"
     &_type_marked
       background-color: $c-gray-hyper-light
 
-      #{$block}_highlight_blue &,
-      #{$block}_highlight_red &,
-      #{$block}_highlight_yellow &,
-      #{$block}_highlight_green &,
-      #{$block}_highlight_purple &,
-      #{$block}_highlight_pink &,
-      #{$block}_highlight_gray &
+      #{$block}_highlight_accent-red-medium &,
+      #{$block}_highlight_accent-orange-medium &,
+      #{$block}_highlight_accent-yellow-medium &,
+      #{$block}_highlight_accent-green-medium &,
+      #{$block}_highlight_accent-blue-medium &,
+      #{$block}_highlight_accent-purple-medium &,
+      #{$block}_highlight_accent-pink-medium &,
+      #{$block}_highlight_gray-medium &,
+      #{$block}_highlight_accent-red-light &,
+      #{$block}_highlight_accent-orange-light &,
+      #{$block}_highlight_accent-yellow-light &,
+      #{$block}_highlight_accent-green-light &,
+      #{$block}_highlight_accent-blue-light &,
+      #{$block}_highlight_accent-purple-light &,
+      #{$block}_highlight_accent-pink-light &,
+      #{$block}_highlight_gray-light &
         background-color: transparent
 
 
@@ -279,13 +326,22 @@ $block: ".toss-panel"
     &_type_marked
       background-color: $c-gray-hyper-light
 
-      #{$block}_highlight_blue &,
-      #{$block}_highlight_red &,
-      #{$block}_highlight_yellow &,
-      #{$block}_highlight_green &,
-      #{$block}_highlight_purple &,
-      #{$block}_highlight_pink &,
-      #{$block}_highlight_gray &
+      #{$block}_highlight_accent-red-medium &,
+      #{$block}_highlight_accent-orange-medium &,
+      #{$block}_highlight_accent-yellow-medium &,
+      #{$block}_highlight_accent-green-medium &,
+      #{$block}_highlight_accent-blue-medium &,
+      #{$block}_highlight_accent-purple-medium &,
+      #{$block}_highlight_accent-pink-medium &,
+      #{$block}_highlight_gray-medium &,
+      #{$block}_highlight_accent-red-light &,
+      #{$block}_highlight_accent-orange-light &,
+      #{$block}_highlight_accent-yellow-light &,
+      #{$block}_highlight_accent-green-light &,
+      #{$block}_highlight_accent-blue-light &,
+      #{$block}_highlight_accent-purple-light &,
+      #{$block}_highlight_accent-pink-light &,
+      #{$block}_highlight_gray-light &
         background-color: transparent
 
 
@@ -333,7 +389,7 @@ $block: ".toss-panel"
           border-right: 1px solid $c-border-primary
 
     // $Panel cell MOD: no border
-    &_no-border:not(:last-child)
+    &_type_no-border:not(:last-child)
       border: none
 
 
@@ -427,6 +483,8 @@ $block: ".toss-panel"
     &:before
       display: inline-block
       font-family: 'icons'
+      font-size: inherit
+      line-height: inherit
       color: inherit
       vertical-align: baseline
 
@@ -453,6 +511,22 @@ $block: ".toss-panel"
     &_icon_email
       &:before
         content: '\e91f'
+
+    &_icon_slot-machine
+      &:before
+        content: '\e92a'
+
+    &_icon_trophy
+      &:before
+        content: '\e92d'
+
+    &_icon_diamond
+      &:before
+        content: '\e929'
+
+    &_icon_tickets
+      &:before
+        content: '\e92b'
 
     &:not(:last-child)
       margin-bottom: 5px
@@ -485,12 +559,11 @@ $block: ".toss-panel"
     #{$block}_page_user-prizes-claimed &
       text-align: center
 
+    @media screen and (max-width: 640px)
       #{$block}_page_prizes-index &
         text-align: center
 
     &:before
-      font-size: 18px
-      line-height: 18px
       margin-right: 10px
 
     // $Panel title MOD: size small
@@ -500,6 +573,19 @@ $block: ".toss-panel"
     // $Panel title MOD: size large
     &_size_l
       font-size: 20px
+
+    // $Panel title MOD: size extra large
+    &_size_xl
+      font-size: 22px
+
+    &_size_xl#{&}_icon_slot-machine,
+    &_size_xl#{&}_icon_trophy,
+    &_size_xl#{&}_icon_diamond,
+    &_size_xl#{&}_icon_tickets
+      &:before
+        margin-top: -5px
+        font-size: 30px
+        vertical-align: middle
 
 
   // $Panel title faded
@@ -538,8 +624,6 @@ $block: ".toss-panel"
     color: $c-text-primary
 
     &:before
-      font-size: 14px
-      line-height: 14px
       margin-right: 5px
 
 
@@ -576,7 +660,7 @@ $block: ".toss-panel"
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
-    color: $c-accent-blue
+    color: $c-link-primary
     vertical-align: middle
     text-decoration: none
     transition: color .3s
@@ -707,6 +791,28 @@ $block: ".toss-panel"
 
     &:not(:last-child)
       margin-bottom: 15px
+
+
+  // $Panel counter
+  &__counter
+    display: block
+    font-family: $f-sans
+    font-size: 16px
+    line-height: 1
+    color: $c-text-primary
+    text-align: center
+
+    // $Panel counter MOD: position above
+    &_position_above
+      margin-bottom: 15px
+
+    // $Panel counter MOD: position below
+    &_position_below
+      margin-top: 15px
+
+
+  &__counter-bold
+    font-weight: 800
 
 
   // $Panel text placeholder

@@ -23,6 +23,10 @@ $block: ".toss-form-checkbox"
   // $Common form checkbox MOD: role control reversed
   &_role_control-reverse
 
+  // $Common form checkbox MOD: adjust no top label
+  &_adjust_no-label
+    padding-top: 20px
+
 
   // $Common form checkbox label
   &__label
@@ -63,6 +67,10 @@ $block: ".toss-form-checkbox"
     justify-content: flex-start
     align-items: flex-start
     cursor: pointer
+
+    // Fix nowrap issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      display: block
 
     // $Common form checkbox input label MOD: adjust field
     // $Common form checkbox input label MOD: adjust field fluid
@@ -109,8 +117,8 @@ $block: ".toss-form-checkbox"
       border-radius: 2px
 
       #{$block}__input:checked ~ &
-        background-color: $c-accent-green
-        border-color: $c-accent-green
+        background-color: $c-accent-primary
+        border-color: $c-accent-primary
 
       #{$block}__input:disabled ~ &,
       #{$block}__input:checked:disabled ~ &,
@@ -142,13 +150,13 @@ $block: ".toss-form-checkbox"
       #{$block}__input:checked:disabled ~ &
         color: $c-text-primary
 
-    // $Common form checkbox input label text MOD: no-wrap text
-    &_type_no-wrap
-      white-space: nowrap
-
     // $Common form checkbox input label text MOD: no-label text
-    &_type_no-label
-      padding-top: 25px
+    &:empty
+      padding-left: 25px
+
+    // $Common form checkbox input label text MOD: no-wrap text
+    &_adjust_no-wrap
+      white-space: nowrap
 
     // $Common form checkbox input label text MOD: type reversed label text
     &_type_reversed
@@ -165,11 +173,10 @@ $block: ".toss-form-checkbox"
         padding-left: 0
         padding-right: 2px
 
-    // $Common form checkbox input label text MOD: type reversed label text MOD: no-label text
-    &_type_reversed#{&}_type_no-label
-      padding-left: 0
-      padding-right: 35px
+      &:empty
+        padding-left: 0
+        padding-right: 25px
 
     // $Common form checkbox input label text MOD: small text
-    &_size_small
+    &_size_s
       font-size: 12px

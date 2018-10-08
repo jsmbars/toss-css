@@ -30,7 +30,10 @@ $block: ".toss-table"
     display: table
 
   &_page_offers-index-panel,
-  &_page_prizes-index-panel
+  &_page_prizes-index-panel,
+  &_page_user-profile-spins-panel,
+  &_page_user-profile-prizes-panel,
+  &_page_user-profile-gems-panel
     border: none
 
   &_page_user-offers-assigned
@@ -40,6 +43,16 @@ $block: ".toss-table"
   &_page_user-prizes-unclaimed
 
   &_page_user-prizes-claimed
+
+  &_page_user-spins-details-details-loss
+
+  &_page_user-spins-details-details-win
+
+  &_page_user-profile-spins-panel
+
+  &_page_user-profile-prizes-panel
+
+  &_page_user-profile-gems-panel
 
 
   // $Common table group
@@ -51,34 +64,6 @@ $block: ".toss-table"
     &:nth-child(odd)
       #{$block}_type_common &
         background-color: $c-bg-secondary
-
-    // $Common table group MOD: highlight blue
-    &_highlight_accent-blue
-      background-color: $c-accent-blue-light
-
-    // $Common table group MOD: highlight red
-    &_highlight_accent-red
-      background-color: $c-accent-red-light
-
-    // $Common table group MOD: highlight yellow
-    &_highlight_accent-yellow
-      background-color: $c-accent-yellow-light
-
-    // $Common table group MOD: highlight green
-    &_highlight_accent-green
-      background-color: $c-accent-green-light
-
-    // $Common table group MOD: highlight purple
-    &_highlight_accent-purple
-      background-color: $c-accent-purple-light
-
-    // $Common table group MOD: highlight pink
-    &_highlight_accent-pink
-      background-color: $c-accent-pink-light
-
-    // $Common table group MOD: highlight gray
-    &_highlight_gray
-      background-color: $c-gray-ultra-light
 
 
   // $Common table row
@@ -95,12 +80,24 @@ $block: ".toss-table"
       display: table-row
 
     #{$block}_page_offers-index-panel &,
-    #{$block}_page_prizes-index-panel &
+    #{$block}_page_prizes-index-panel &,
+    #{$block}_page_user-profile-spins-panel &,
+    #{$block}_page_user-profile-prizes-panel &,
+    #{$block}_page_user-profile-gems-panel &
       background-color: transparent
 
     @media screen and (max-width: 1120px)
       #{$block}_page_offers-index-panel &,
       #{$block}_page_prizes-index-panel &
+        flex-wrap: wrap
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        display: block
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_user-profile-gems-panel &
         flex-wrap: wrap
 
     &:nth-child(odd)
@@ -112,6 +109,11 @@ $block: ".toss-table"
 
     // $Common table row MOD: role header
     &_role_header
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_user-spins-details-loss &,
+        #{$block}_page_user-spins-details-win &
+          display: none
 
     // $Common table row MOD: adjust group
     &_adjust_group
@@ -130,41 +132,14 @@ $block: ".toss-table"
 
 
     // $Common table row MOD:  no border
-    &_no-border,
-    &_no-border:not(:last-child)
+    &_type_no-border,
+    &_type_no-border:not(:last-child)
       border: none
-
-    // $Common table row MOD: highlight blue
-    &_highlight_accent-blue
-      background-color: $c-accent-blue-light
-
-    // $Common table row MOD: highlight red
-    &_highlight_accent-red
-      background-color: $c-accent-red-light
-
-    // $Common table row MOD: highlight yellow
-    &_highlight_accent-yellow
-      background-color: $c-accent-yellow-light
-
-    // $Common table row MOD: highlight green
-    &_highlight_accent-green
-      background-color: $c-accent-green-light
-
-    // $Common table row MOD: highlight purple
-    &_highlight_accent-purple
-      background-color: $c-accent-purple-light
-
-    // $Common table row MOD: highlight pink
-    &_highlight_accent-pink
-      background-color: $c-accent-pink-light
-
-    // $Common table row MOD: highlight gray
-    &_highlight_gray
-      background-color: $c-gray-ultra-light
 
 
   // $Common table cell
   &__cell
+    position: relative
     flex-grow: 1
     display: flex
     flex-direction: column
@@ -191,16 +166,45 @@ $block: ".toss-table"
       border-right: 1px solid $c-border-primary
 
       #{$block}_page_offers-index-panel &,
-      #{$block}_page_prizes-index-panel &
+      #{$block}_page_prizes-index-panel &,
+      #{$block}_page_user-profile-spins-panel &,
+      #{$block}_page_user-profile-prizes-panel &,
+      #{$block}_page_user-profile-gems-panel &
         border-right: none
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_user-spins-details-loss &,
+        #{$block}_page_user-spins-details-win &
+          border-right: none
+
+      &:after
+        #{$block}_page_user-profile-spins-panel &,
+        #{$block}_page_user-profile-prizes-panel &,
+        #{$block}_page_user-profile-gems-panel &
+          content: ''
+          position: absolute
+          right: 0
+          top: 50%
+          height: 30px
+          margin-top: -15px
+          border-right: 1px solid $c-border-primary
+
 
     #{$block}_page_prizes-index-panel &,
     #{$block}_page_user-offers-assigned &,
     #{$block}_page_user-offers-redeemed &,
     #{$block}_page_user-prizes-unclaimed &,
-    #{$block}_page_user-prizes-claimed &
+    #{$block}_page_user-prizes-claimed &,
+    #{$block}_page_user-profile-spins-panel &,
+    #{$block}_page_user-profile-prizes-panel &,
+    #{$block}_page_user-profile-gems-panel &
       align-items: center
       text-align: center
+
+    #{$block}_page_user-profile-spins-panel &,
+    #{$block}_page_user-profile-prizes-panel &,
+    #{$block}_page_user-profile-gems-panel &
+      justify-content: flex-start
 
     // $Common table cell first column
     &:nth-child(1)
@@ -233,6 +237,21 @@ $block: ".toss-table"
         flex-shrink: 0
         width: 50px
 
+      #{$block}_page_user-spins-details-loss &
+        width: 33%
+
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
+      #{$block}_page_user-profile-spins-panel &
+        width: 33%
+
+      #{$block}_page_user-profile-prizes-panel &
+        width: 50%
+
+      #{$block}_page_user-profile-gems-panel &
+        width: 33%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 50%
@@ -240,6 +259,12 @@ $block: ".toss-table"
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 33.3%
+
+        #{$block}_page_user-spins-details-loss &
+          width: 100%
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 800px)
         #{$block}_page_offers-index-panel &
@@ -257,6 +282,9 @@ $block: ".toss-table"
         #{$block}_page_prizes-index-panel &
           padding-left: 15px
           padding-right: 15px
+
+        #{$block}_page_user-profile-gems-panel &
+          width: 50%
 
     // $Common table cell second column
     &:nth-child(2)
@@ -279,6 +307,21 @@ $block: ".toss-table"
       #{$block}_page_user-prizes-claimed &
         width: 23%
 
+      #{$block}_page_user-spins-details-loss &
+        width: 33%
+
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
+      #{$block}_page_user-profile-spins-panel &
+        width: 33%
+
+      #{$block}_page_user-profile-prizes-panel &
+        width: 50%
+
+      #{$block}_page_user-profile-gems-panel &
+        width: 33%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 50%
@@ -287,6 +330,12 @@ $block: ".toss-table"
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 33.3%
+
+        #{$block}_page_user-spins-details-loss &
+          width: 100%
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 800px)
         #{$block}_page_offers-index-panel &
@@ -306,6 +355,9 @@ $block: ".toss-table"
 
         #{$block}_page_prizes-index-panel &
           padding-left: 15px
+
+        #{$block}_page_user-profile-gems-panel &
+          width: 50%
 
     // $Common table cell third column
     &:nth-child(3)
@@ -328,6 +380,21 @@ $block: ".toss-table"
       #{$block}_page_user-prizes-claimed &
         width: 23%
 
+      #{$block}_page_user-spins-details-loss &
+        width: 33%
+
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
+      #{$block}_page_user-profile-spins-panel &
+        width: 33%
+
+      #{$block}_page_user-profile-prizes-panel &
+        width: 50%
+
+      #{$block}_page_user-profile-gems-panel &
+        width: 33%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_offers-index-panel &
           width: 100%
@@ -338,6 +405,12 @@ $block: ".toss-table"
         #{$block}_page_prizes-index-panel &
           width: 33.3%
           padding-right: 20px
+
+        #{$block}_page_user-spins-details-loss &
+          width: 100%
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}_page_prizes-index-panel &
@@ -351,6 +424,10 @@ $block: ".toss-table"
 
         #{$block}_page_prizes-index-panel &
           padding-right: 15px
+
+        #{$block}_page_user-profile-gems-panel &
+          width: 100%
+          border-top: 1px solid $c-border-primary
 
     // $Common table cell fourth column
     &:nth-child(4)
@@ -370,11 +447,17 @@ $block: ".toss-table"
       #{$block}_page_user-prizes-claimed &
         width: 12%
 
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 100%
           padding-left: 20px
           border-top: 1px solid $c-border-secondary
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 480px)
         #{$block}_page_prizes-index-panel &
@@ -427,18 +510,133 @@ $block: ".toss-table"
     &_role_footer
       font-weight: 600
 
-    &_no-border
+    &_type_no-border
       &:not(:last-child)
         border: none
+
+
+  &__group,
+  &__row,
+  &__cell
+    // $Common table cell MOD: highlight red medium
+    &_highlight_accent-red-medium
+      background-color: $c-accent-red-medium
+
+    // $Common table cell MOD: highlight orange medium
+    &_highlight_accent-orange-medium
+      background-color: $c-accent-orange-medium
+
+    // $Common table cell MOD: highlight yellow medium
+    &_highlight_accent-yellow-medium
+      background-color: $c-accent-yellow-medium
+
+    // $Common table cell MOD: highlight green medium
+    &_highlight_accent-green-medium
+      background-color: $c-accent-green-medium
+
+    // $Common table cell MOD: highlight blue medium
+    &_highlight_accent-blue-medium
+      background-color: $c-accent-blue-medium
+
+    // $Common table cell MOD: highlight purple medium
+    &_highlight_accent-purple-medium
+      background-color: $c-accent-purple-medium
+
+    // $Common table cell MOD: highlight pink medium
+    &_highlight_accent-pink-medium
+      background-color: $c-accent-pink-medium
+
+    // $Common table cell MOD: highlight gray medium
+    &_highlight_gray-medium
+      background-color: $c-gray-extra-light
+
+    // $Common table cell MOD: highlight red light
+    &_highlight_accent-red-light
+      background-color: $c-accent-red-light
+
+    // $Common table cell MOD: highlight orange light
+    &_highlight_accent-orange-light
+      background-color: $c-accent-orange-light
+
+    // $Common table cell MOD: highlight yellow light
+    &_highlight_accent-yellow-light
+      background-color: $c-accent-yellow-light
+
+    // $Common table cell MOD: highlight green light
+    &_highlight_accent-green-light
+      background-color: $c-accent-green-light
+
+    // $Common table cell MOD: highlight blue light
+    &_highlight_accent-blue-light
+      background-color: $c-accent-blue-light
+
+    // $Common table cell MOD: highlight purple light
+    &_highlight_accent-purple-light
+      background-color: $c-accent-purple-light
+
+    // $Common table cell MOD: highlight pink light
+    &_highlight_accent-pink-light
+      background-color: $c-accent-pink-light
+
+    // $Common table cell MOD: highlight gray light
+    &_highlight_gray-light
+      background-color: $c-gray-ultra-light
 
 
   // $Common table info
   &__info
     width: 100%
 
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
+
 
   &__info-group
     width: 100%
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 60%
+        padding-left: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        padding-left: 10px
+
+
+  &__info-label
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 600
+    color: $c-text-primary
+    text-align: right
+
+    #{$block}_page_user-spins-details-loss &,
+    #{$block}_page_user-spins-details-win &
+      display: none
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        flex-grow: 0
+        flex-shrink: 0
+        display: block
+        width: 40%
+        padding-right: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        padding-right: 10px
 
 
   // $Common table text
@@ -560,7 +758,7 @@ $block: ".toss-table"
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
-    color: $c-accent-blue
+    color: $c-link-primary
     vertical-align: middle
     text-decoration: none
     transition: color .3s

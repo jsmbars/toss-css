@@ -18,6 +18,12 @@ $block: ".toss-activity"
   display: block
   width: 100%
 
+  &:not(:last-child)
+    margin-bottom: 30px
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 25px
+
 
   // $Activity list
   &__list
@@ -80,6 +86,41 @@ $block: ".toss-activity"
       border-radius: 50%
       background-color: $c-gray-light
 
+    // $Activity marker MOD: color red
+    &_color_accent-red
+      &:before
+        background-color: $c-accent-red
+
+    // $Activity marker MOD: color orange
+    &_color_accent-orange
+      &:before
+        background-color: $c-accent-orange
+
+    // $Activity marker MOD: color yellow
+    &_color_accent-yellow
+      &:before
+        background-color: $c-accent-yellow
+
+    // $Activity marker MOD: color green
+    &_color_accent-green
+      &:before
+        background-color: $c-accent-green
+
+    // $Activity marker MOD: color blue
+    &_color_accent-blue
+      &:before
+        background-color: $c-accent-blue
+
+    // $Activity marker MOD: color purple
+    &_color_accent-purple
+      &:before
+        background-color: $c-accent-purple
+
+    // $Activity marker MOD: color pink
+    &_color_accent-pink
+      &:before
+        background-color: $c-accent-pink
+
 
   // $Activity record
   &__record
@@ -110,4 +151,13 @@ $block: ".toss-activity"
   // $Activity text faded
   &__text-faded
     color: $c-text-secondary
+
+
+  // $Activity actions
+  &__actions
+    text-align: center
+
+
+  // $Activity action
+  &__action
 

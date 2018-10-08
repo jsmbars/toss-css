@@ -36,15 +36,15 @@ $block: ".toss-form-field"
   // $Common form field MOD: state error
   &_state_error
 
-  // $Common form field MOD: no top label
-  &_no-label
-    padding-top: 20px
-
-  // $Common form field MOD: size small
-  &_size_s
-
   // $Common form field MOD:  adjust quick access search
   &_adjust_quick-access-search
+
+  // $Common form field MOD: adjust no top label
+  &_adjust_no-label
+    padding-top: 20px
+
+  // $Common form field MOD: adjust clearable
+  &_adjust_clear
 
 
   // $Common form field label
@@ -55,7 +55,7 @@ $block: ".toss-form-field"
     font-family: $f-sans
     font-size: 14px
     color: $c-text-primary
-    font-weight: 400
+    font-weight: 600
     line-height: 1
 
     // $Common form field label text CONTEXT: $Common form MOD: role control
@@ -65,7 +65,7 @@ $block: ".toss-form-field"
       flex-shrink: 0
       width: auto
       margin-bottom: 0
-      font-weight: 400
+      font-weight: 600
       white-space: nowrap
 
     #{$block}_role_control &
@@ -100,12 +100,30 @@ $block: ".toss-form-field"
         white-space: normal
 
     // $Common form field label MOD: size small
-    &_size_small
+    &_size_s
       font-size: 12px
 
     // $Common form field label MOD: no wrap
-    &_nowrap
+    &_adjust_no-wrap
       white-space: nowrap
+
+    &_type_border
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        align-self: stretch
+        width: auto
+        min-height: 50px
+        padding: 15px
+        margin: 0
+        border: 1px solid $c-border-primary
+        border-radius: 2px
+        white-space: nowrap
+
+      #{$block}_role_control &
+        border-right: none
+
+      #{$block}_role_control-reverse &
+        border-left: none
 
 
   // $Common form field label text
@@ -115,6 +133,15 @@ $block: ".toss-form-field"
   // $Common form field label text faded
   &__label-text-faded
     color: $c-text-secondary
+
+
+  // $Common form field label icon
+  &__label-icon
+    font-family: 'icons'
+    line-height: 1
+    font-weight: 400
+    font-size: inherit
+    color: inherit
 
 
   // $Common form field tags
@@ -127,8 +154,7 @@ $block: ".toss-form-field"
   &__input
     position: relative
 
-    // $Common form field input MOD: adjust clear action
-    &_adjust_clear
+    #{$block}_adjust_clear &
       padding-right: 22px
 
     &:before
@@ -249,6 +275,12 @@ $block: ".toss-form-field"
 
         #{$block}_state_error &
           color: $c-accent-red !important
+
+
+  // $Common form field third-party component wrap
+  &__component
+    display: block
+    width: 100%
 
 
   // $Common form field note
