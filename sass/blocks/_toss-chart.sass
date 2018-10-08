@@ -18,6 +18,10 @@ $block: ".toss-chart"
   display: block
   width: 100%
 
+  &_role_user-spins-pie-chart
+
+  &_role_user-spins-line-chart
+
 
   // $Chart header
   &__header
@@ -79,6 +83,13 @@ $block: ".toss-chart"
     position: relative
     display: block
     min-width: 100%
+
+    #{$block}_role_user-spins-pie-chart &
+      min-width: 640px
+      min-height: 300px
+
+    #{$block}_role_user-spins-line-chart &
+      min-width: 1160px
 
 
   // $Chart placeholder image

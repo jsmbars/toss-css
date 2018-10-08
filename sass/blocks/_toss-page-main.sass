@@ -132,6 +132,12 @@ $block: ".toss-page-main"
     @media screen and (max-width: 1120px)
       flex-direction: column
 
+    &:not(:last-child)
+      margin-bottom: 30px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 25px
+
     // $Page main layout MOD: sidebar single
     &_type_sidebar-single
 
