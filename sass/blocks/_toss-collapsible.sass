@@ -18,6 +18,18 @@ $block: ".toss-collapsible"
   display: block
   width: 100%
 
+  &_type_accordion
+    padding: 20px 0
+
+    &:first-child
+      padding-top: 0
+
+    &:last-child
+      padding-bottom: 0
+
+    &:not(:last-child)
+      border-bottom: 1px solid $c-border-primary
+
 
   // $Collapsible header
   &__header
@@ -33,6 +45,16 @@ $block: ".toss-collapsible"
     // $Collapsible header MOD: justify center
     &_justify_center
       justify-content: center
+
+    // $Collapsible header row MOD: adjust action
+    &_adjust_action
+      cursor: pointer
+
+    // $Collapsible header MOD: adjust nowrap
+    &_adjust_no-wrap
+      @media screen and (max-width: 960px)
+        flex-direction: row
+        justify-content: space-between
 
 
   // $Collapsible label
@@ -83,6 +105,25 @@ $block: ".toss-collapsible"
       &:after
           content: '\e918'
 
+  // $Collapsible icon
+  &__icon
+    &:before
+      content: '\e91a'
+      display: inline-block
+      font-family: icons
+      font-size: 30px
+      line-height: 20px
+      color: $c-text-primary
+
+    &:hover
+      &:before
+        color: $c-text-secondary
+
+    // $Collapsible icon MOD: state closed
+    &_state_closed
+      &:before
+        content: '\e919'
+
 
   // $Collapsible extra content
   &__extra
@@ -106,6 +147,45 @@ $block: ".toss-collapsible"
       padding-top: 20px
 
 
+  &__icon + #{&}__extra
+    padding-left: 20px
+
+  &__extra + #{&}__icon
+    padding-left: 20px
+
+
+  // $Collapsible text
+  &__text
+    display: block
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+    color: $c-text-primary
+
+
+  // $Collapsible text faded
+  &__text-faded
+    color: $c-text-secondary
+
+
+  // $Collapsible text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Collapsible text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Collapsible text part
+  &__text-part
+    &:not(:last-child)
+      margin-right: 15px
+
+
+
   // $Collapsible content
   &__content
 
@@ -121,3 +201,7 @@ $block: ".toss-collapsible"
     margin-top: 20px
     padding-top: 20px
     border-top: 1px solid $c-border-primary
+
+    &_type_no-border
+      margin-top: 0
+      border: none

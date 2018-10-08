@@ -44,6 +44,10 @@ $block: ".toss-table"
 
   &_page_user-prizes-claimed
 
+  &_page_user-spins-details-details-loss
+
+  &_page_user-spins-details-details-win
+
   &_page_user-profile-spins-panel
 
   &_page_user-profile-prizes-panel
@@ -87,6 +91,11 @@ $block: ".toss-table"
       #{$block}_page_prizes-index-panel &
         flex-wrap: wrap
 
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        display: block
+
     @media screen and (max-width: 480px)
       #{$block}_page_user-profile-gems-panel &
         flex-wrap: wrap
@@ -100,6 +109,11 @@ $block: ".toss-table"
 
     // $Common table row MOD: role header
     &_role_header
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_user-spins-details-loss &,
+        #{$block}_page_user-spins-details-win &
+          display: none
 
     // $Common table row MOD: adjust group
     &_adjust_group
@@ -118,8 +132,8 @@ $block: ".toss-table"
 
 
     // $Common table row MOD:  no border
-    &_no-border,
-    &_no-border:not(:last-child)
+    &_type_no-border,
+    &_type_no-border:not(:last-child)
       border: none
 
 
@@ -157,6 +171,11 @@ $block: ".toss-table"
       #{$block}_page_user-profile-prizes-panel &,
       #{$block}_page_user-profile-gems-panel &
         border-right: none
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_user-spins-details-loss &,
+        #{$block}_page_user-spins-details-win &
+          border-right: none
 
       &:after
         #{$block}_page_user-profile-spins-panel &,
@@ -218,6 +237,12 @@ $block: ".toss-table"
         flex-shrink: 0
         width: 50px
 
+      #{$block}_page_user-spins-details-loss &
+        width: 33%
+
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
       #{$block}_page_user-profile-spins-panel &
         width: 33%
 
@@ -234,6 +259,12 @@ $block: ".toss-table"
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 33.3%
+
+        #{$block}_page_user-spins-details-loss &
+          width: 100%
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 800px)
         #{$block}_page_offers-index-panel &
@@ -276,6 +307,12 @@ $block: ".toss-table"
       #{$block}_page_user-prizes-claimed &
         width: 23%
 
+      #{$block}_page_user-spins-details-loss &
+        width: 33%
+
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
       #{$block}_page_user-profile-spins-panel &
         width: 33%
 
@@ -293,6 +330,12 @@ $block: ".toss-table"
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 33.3%
+
+        #{$block}_page_user-spins-details-loss &
+          width: 100%
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 800px)
         #{$block}_page_offers-index-panel &
@@ -337,6 +380,12 @@ $block: ".toss-table"
       #{$block}_page_user-prizes-claimed &
         width: 23%
 
+      #{$block}_page_user-spins-details-loss &
+        width: 33%
+
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
       #{$block}_page_user-profile-spins-panel &
         width: 33%
 
@@ -356,6 +405,12 @@ $block: ".toss-table"
         #{$block}_page_prizes-index-panel &
           width: 33.3%
           padding-right: 20px
+
+        #{$block}_page_user-spins-details-loss &
+          width: 100%
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}_page_prizes-index-panel &
@@ -392,11 +447,17 @@ $block: ".toss-table"
       #{$block}_page_user-prizes-claimed &
         width: 12%
 
+      #{$block}_page_user-spins-details-win &
+        width: 25%
+
       @media screen and (max-width: 960px)
         #{$block}_page_prizes-index-panel &
           width: 100%
           padding-left: 20px
           border-top: 1px solid $c-border-secondary
+
+        #{$block}_page_user-spins-details-win &
+          width: 100%
 
       @media screen and (max-width: 480px)
         #{$block}_page_prizes-index-panel &
@@ -449,7 +510,7 @@ $block: ".toss-table"
     &_role_footer
       font-weight: 600
 
-    &_no-border
+    &_type_no-border
       &:not(:last-child)
         border: none
 
@@ -526,9 +587,56 @@ $block: ".toss-table"
   &__info
     width: 100%
 
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
+
 
   &__info-group
     width: 100%
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 60%
+        padding-left: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        padding-left: 10px
+
+
+  &__info-label
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 600
+    color: $c-text-primary
+    text-align: right
+
+    #{$block}_page_user-spins-details-loss &,
+    #{$block}_page_user-spins-details-win &
+      display: none
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        flex-grow: 0
+        flex-shrink: 0
+        display: block
+        width: 40%
+        padding-right: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_user-spins-details-loss &,
+      #{$block}_page_user-spins-details-win &
+        padding-right: 10px
 
 
   // $Common table text

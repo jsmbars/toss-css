@@ -24,9 +24,9 @@ $block: ".toss-history"
     @media screen and (max-width: 480px)
       margin-bottom: 25px
 
-  &_adjust_panel
+  &_type_panel
 
-  &_adjust_indicator
+  &_type_indicator
 
 
   // $History filter
@@ -55,21 +55,21 @@ $block: ".toss-history"
     position: relative
     width: 100%
 
-    #{$block}_adjust_panel &
+    #{$block}_type_panel &
       margin-bottom: 30px
 
-    #{$block}_adjust_indicator &
+    #{$block}_type_indicator &
       margin-bottom: 40px
 
     @media screen and (max-width: 480px)
-      #{$block}_adjust_panel &
+      #{$block}_type_panel &
         margin-bottom: 25px
 
-      #{$block}_adjust_indicator &
+      #{$block}_type_indicator &
         margin-bottom: 30px
 
     &:before
-      #{$block}_adjust_panel &
+      #{$block}_type_panel &
         content: "\e90f"
         box-sizing: border-box
         position: absolute
@@ -87,7 +87,7 @@ $block: ".toss-history"
         background-color: $c-bg-light
 
     &:after
-      #{$block}_adjust_panel &
+      #{$block}_type_panel &
         content: ""
         position: absolute
         top: 30px
@@ -99,7 +99,7 @@ $block: ".toss-history"
         margin-left: -2px
         background-color: $c-border-secondary
 
-      #{$block}_adjust_indicator &
+      #{$block}_type_indicator &
         content: ""
         position: absolute
         top: 5px
@@ -112,7 +112,7 @@ $block: ".toss-history"
         background-color: $c-border-secondary
 
       @media screen and (max-width: 480px)
-        #{$block}_adjust_indicator &
+        #{$block}_type_indicator &
           left: 15px
           bottom: -35px
 
@@ -120,14 +120,14 @@ $block: ".toss-history"
       margin-bottom: 0
 
       &:after
-        #{$block}_adjust_panel &,
-        #{$block}_adjust_indicator &
+        #{$block}_type_panel &,
+        #{$block}_type_indicator &
           display: none
 
     // $History item MOD: icon accent red
     &_icon_accent-red
       &:before
-        #{$block}_adjust_panel &
+        #{$block}_type_panel &
           color: $c-accent-red
 
 
@@ -251,16 +251,16 @@ $block: ".toss-history"
     display: block
     width: 100%
 
-    #{$block}_adjust_panel &
+    #{$block}_type_panel &
       width: calc(100% - 30px)
       margin-left: 30px
 
-    #{$block}_adjust_indicator &
+    #{$block}_type_indicator &
       width: calc(100% - 210px)
       margin-left: 210px
 
     @media screen and (max-width: 480px)
-      #{$block}_adjust_indicator &
+      #{$block}_type_indicator &
         width: calc(100% - 40px)
         margin-left: 40px
 
