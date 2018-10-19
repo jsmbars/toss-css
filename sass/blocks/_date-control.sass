@@ -451,8 +451,12 @@ $block: ".date-control"
         border: 1px lighten($c-accent-primary, 8)
         color: $c-text-light
 
+      &:focus
+        outline: none
 
-    td.CalendarDay__hovered_offset
+
+    td.CalendarDay__hovered_offset,
+    td.CalendarDay__hovered_span
       background: lighten($c-accent-primary, 8)
       border: 1px solid lighten($c-accent-primary, 8)
       color: $c-text-light
